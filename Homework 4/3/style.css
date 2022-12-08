@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 1200px;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(250,250,210);
+}
+
+.container {
+    margin: 0 auto;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+.images {
+    transform: translateY(120vh);
+}
+
+@keyframes book {
+    100% {
+        transform: translate(80px, -110vh) rotate(-15deg);
+    }
+}
+
+img.book {
+    animation: book 2s ease 0.5s 1 both;
+}
+
+@keyframes calc {
+    100% {
+        transform: translate(60px, -90vh) rotate(-30deg) scale(0.8);
+    }
+}
+
+img.calc {
+    animation: calc 2s ease 1s 1 both;
+}
+
+@keyframes paper {
+    100% {
+        transform: translate(-150px, -110vh) rotate(15deg);
+    }
+}
+
+img.paper {
+    animation: paper 2s ease 1.5s 1 both;
+}
+
+@keyframes pallete {
+    100% {
+        transform: translate(350px, -90vh) rotate(220deg) scale(0.8);
+    }
+}
+
+img.pallete {
+    animation: pallete 2s ease 2s 1 both;
+}
+
+@keyframes pencil {
+    100% {
+        transform: translate(-500px, -80vh) rotate(1170deg);
+    }
+}
+
+img.pencil {
+    animation: pencil 2s ease 2.5s 1 both;
+}

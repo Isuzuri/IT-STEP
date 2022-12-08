@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(1,158,158);
+    overflow-y: hidden;
+}
+
+header {
+    position: fixed;
+    width: 100vw;
+    padding: 1.5rem;
+    background-color: rgb(0,139,139);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+}
+
+main {
+    position: relative;
+    top: 5rem;
+    display: flex;
+}
+
+.board {
+    min-width: 300px;
+    max-width: 400px;
+    height: 85vh;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgb(220,220,220);
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+h3 {
+    margin: 0;
+}
+
+.task {
+    margin: 0.5rem 0;
+    background-color: rgb(245,245,245);
+    border-radius: 5px;
+}
+
+.task-text {
+    padding: 1rem;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1rem 1fr 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    padding-bottom: 0.3rem;
+}
+
+.justify {
+    width: 1rem;
+    height: 1rem;
+    background-image: url(icons/justify_26.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.attr {
+    position: relative;
+}
+
+.attr > div {
+    margin-left: 1rem;
+}
+
+.attr div {
+    display: inline-block;
+}
+
+.checkbox > div:first-child, .attachment > div:first-child, .comments > div:first-child {
+    position: relative;
+    top: 0.1rem;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.checkbox > div:first-child {
+    background-image: url(icons/checkbox_26.png);
+}
+
+.attachment > div:first-child {
+    background-image: url(icons/attach_26.png);
+}
+
+.comments > div:first-child {
+    background-image: url(icons/comments_26.png);
+}
+
+.photo {
+    position: relative;
+    left: -1.5rem;
+    width: 3rem;
+    height: 3rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.afro {
+    background-image: url(icons/avatar_1.png);
+}
+
+.tail {
+    background-image: url(icons/avatar_2.png);
+}
+
+.brown {
+    background-image: url(icons/avatar_3.png);
+}
+
+.black {
+    background-image: url(icons/avatar_4.png);
+}

@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.flex-container {
+    height: 95vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+main > div {
+    margin: 0.5rem;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    transition: transform 1s;
+}
+
+main > div > div {
+    padding: 1rem;
+}
+
+main > div > div:first-child {
+    font-size: 1.2rem;
+}
+
+main > div > div:nth-child(2) {
+    padding: 0.5rem 1rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+main > div > div:nth-child(3) {
+    padding: 0 1rem;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.service {
+    margin: 0 0.5rem;
+}
+
+span {
+    line-height: 2rem;
+}
+
+.red > div:first-child {
+    border-bottom: 3px solid rgb(199,55,86);
+}
+
+.yellow > div:first-child {
+    border-bottom: 3px solid rgb(215,145,59);
+}
+
+.blue > div:first-child {
+    border-bottom: 3px solid rgb(43,102,137);
+}
+
+.green > div:first-child {
+    border-bottom: 3px solid rgb(99,187,52);
+}
+
+button {
+    border: none;
+    padding: 1rem 2.5rem;
+    margin: 1rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+
+.red button {
+    background-color: rgb(199,55,86);
+}
+
+.yellow button {
+    background-color: rgb(215,145,59);
+}
+
+.blue button {
+    background-color: rgb(43,102,137);
+}
+
+.green button {
+    background-color: rgb(99,187,52);
+}
+
+main > div:hover {
+    transform: scale(1.1);
+}

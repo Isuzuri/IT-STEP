@@ -1,0 +1,60 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-text p {
+    font-size: 24px;
+    text-align: justify;
+}
+
+.sup-text {
+    font-size: 65%;
+    vertical-align: top;
+
+    font-weight: bold;
+    color: darkblue;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+a {
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+.hint {
+    font-size: 18px;
+}
+
+#worldcard {
+    position: absolute;
+    max-height: 320px;
+    margin-left: -250px;
+}
+
+#creamcard {
+    position: absolute;
+    max-height: 320px;
+    margin-left: -200px;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+h5 {
+    margin-top: 2px;
+    color: rgba(0, 0, 0, 0.4);
+}

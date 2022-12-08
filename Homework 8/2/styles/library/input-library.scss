@@ -1,0 +1,95 @@
+input {
+    outline: none;
+}
+
+.inputs {
+    input {
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        border: 1px solid rgba(#000000, 0.1);
+
+        &::placeholder {
+            color: rgba(#000000, 0.4);
+        }
+
+        &[placeholder="Valid text"] {
+            &::placeholder{
+                color: #41ad49;
+            }
+            border-color: #41ad49;
+        }
+
+        &[placeholder="Invalid text"] {
+            &::placeholder{
+                color: #e44061;
+            }
+            border-color: #e44061;
+        }
+    }
+}
+
+.check-boxes {
+form {
+    position: relative;
+}
+
+    input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    input+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        
+    }
+
+    label.out::after {
+        content: 'Subscribe';
+        margin-left: 0.5rem;
+    }
+
+    label.in::before{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 1.5rem;
+        height: 1.4rem;
+        top: 2px;
+        left: 2px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        background-color: #e44061;
+        border-radius: 5px;
+        transition: all 0.5s;
+    }
+
+    input+label.out::before {
+        content: '';
+        display: inline-block;
+        width: 3rem;
+        height: 1.5rem;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid #e44061;
+        border-radius: 5px;
+        transition: all 0.5s;
+    }
+
+    input:checked {
+        ~label.out::before {
+            border: 1px solid #41ad49;
+        }
+
+        ~label.in::before {
+            background-color: #41ad49;
+            left: 1.5rem;
+        }
+
+        ~label.out::after {
+            content: 'Unsubscribe';
+        }
+    }
+}
