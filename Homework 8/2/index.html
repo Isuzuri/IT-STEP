@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +22,7 @@
             <h1>Check boxes (clickable)</h1>
             <div class="flex">
                 <form action="">
-                    <input type="checkbox" name="" id="on">
+                    <input type="checkbox" name="" id="on" checked>
                     <label for="on" class="out"></label>
                     <label for="on" class="in"></label>
                 </form> 
@@ -34,15 +34,33 @@
             </div>
         </div>
         <div class="radio">
-            <h1>Radio buttons</h1>
+            <h1>Radio buttons (clickable)</h1>
             <div class="flex">
-
+                <form action=""></form>
+                <p>Gender:</p>
+                    <div>
+                        <input type="radio" name="genderchoose" id="male" checked>
+                        <label for="male"><div class="hollow"></div></label>
+                    </div>
+                <label for="male">Male</label>
+                    <div>
+                        <input type="radio" name="genderchoose" id="female">
+                        <label for="female"><div class="hollow"></div></label>
+                    </div>
+                <label for="female">Female</label>
+            </form>
             </div>
         </div>
         <div class="buttons">
             <h1>Buttons</h1>
             <div class="flex">
-
+                <button class="active">Active</button>
+                <button class="act-hover">Hover</button>
+                <button class="danger">Danger</button>
+                <button class="dang-hover">Hover</button>
+                <button disabled="disabled" class="disabled">Disabled</button>
+                <button class="plus">+</button>
+                <button class="minus">-</button>
             </div>
         </div>
         <div class="text-area">
