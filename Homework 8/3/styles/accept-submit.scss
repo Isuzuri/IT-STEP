@@ -1,0 +1,27 @@
+.accept {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+hr {
+    border: 0.5px solid rgba(0, 0, 0, 0.05)
+}
+
+.submit-button {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-content: center;
+
+    button {
+        margin: 2rem;
+        padding: 0.8rem 3rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #008b8b;
+        color: rgba($color: #f0f0f0f0, $alpha: 0.9);
+    }
+}
