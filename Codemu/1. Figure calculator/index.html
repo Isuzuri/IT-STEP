@@ -6,38 +6,39 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <button id="add">Display</button>
-    <form id="sqadd">
-      <h3>Периметр и площадь квадрата</h3>
-      <p>Введи длину стороны</p>
-      <input type="number" id="side_length" />
-      <input type="submit" value="&#128293;" id="square" />
-      <div id="sqresult"> </div>
-    </form>
-    
-    <form>
-      <h3>Периметр и площадь прямоугольника</h3>
-       <p>Введи две стороны</p>
-      <input type="number" id="side-a" />
-      <input type="number" id="side-b" />
-      <input type="submit" value="&#128293;" id="rectangle" />
-    </form>
-    
-    <form>
-      <h3>Площадь круга и длина окружности</h3>
-       <p>Введи радиус окружности</p>
-      <input type="number" id="rad" />
-      <input type="submit" value="&#128293;" id="circle" />
-    </form>
-    
-    <form>
-      <h3>Площадь треуольника по трём сторонам</h3>
-       <p>Введи 3 стороны</p>
-      <input type="number" id="tria-a" />
-      <input type="number" id="tria-b" />
-      <input type="number" id="tria-c" />
-      <input type="submit" value="&#128293;" id="triangle" />
-    </form>
+    <div class="wrap">
+      <form>
+        <h3>Периметр и площадь квадрата</h3>
+        <p>Введи длину стороны (см)</p>
+        <input type="number" id="side_length" />
+        <input type="submit" value="&#128293;" id="square" />
+        <div id="sqresult"> </div>
+      </form>
+      
+      <form>
+        <h3>Периметр и площадь прямоугольника</h3>
+         <p>Введи две стороны (см)</p>
+        <input type="number" id="side-a" />
+        <input type="number" id="side-b" />
+        <input type="submit" value="&#128293;" id="rectangle" />
+      </form>
+      
+      <form>
+        <h3>Площадь круга и длина окружности</h3>
+         <p>Введи радиус окружности (см)</p>
+        <input type="number" id="rad" />
+        <input type="submit" value="&#128293;" id="circle" />
+      </form>
+      
+      <form>
+        <h3>Площадь треугольника по трём сторонам</h3>
+         <p>Введи 3 стороны (см)</p>
+        <input type="number" id="tria-a" />
+        <input type="number" id="tria-b" />
+        <input type="number" id="tria-c" />
+        <input type="submit" value="&#128293;" id="triangle" />
+      </form>
+    </div>
     
     <script src="script.js"></script>
   </body>
