@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    gap: 3rem;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100px;
+}
