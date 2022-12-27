@@ -14,8 +14,14 @@ task2.onclick = function() {
     let a, b, c;
     a = 12; b = 29; c = 17;
     let arr = [a, b, c];
-    console.log(`Введённый значения: ${arr}`);
-    console.log(`Среднее арифметическое этих чисел: ${(a + b + c) / 3}`)
+    let cont = document.getElementById('output');
+    let add = document.createElement('p');
+    add.textContent = (`Введённый значения: ${arr.join(' ')} 
+    Среднее арифметическое этих чисел: ${(a + b + c) / 3}`);
+    cont.appendChild(add);
+    let br = document.createElement('hr');
+    cont.appendChild(br);
+    scrollPage (cont)
 }
 
 task3.onclick = function() {
@@ -23,6 +29,23 @@ task3.onclick = function() {
     const r = 12;
     const h = 6;
 
-    console.log(`Объём цилиндра равен: V = ${PI * r **2 * h}`);
-    console.log(`Площадь поверхности цилиндра равна: S = ${2 * PI * r *(r + h)}`);
+    let cont = document.getElementById('output');
+    let add = document.createElement('p');
+    add.textContent = (`Объём цилиндра равен: V = ${PI * r **2 * h}
+    Площадь поверхности цилиндра равна: S = ${2 * PI * r *(r + h)}`);
+    cont.appendChild(add);
+    let br = document.createElement('hr');
+    cont.appendChild(br);
+    scrollPage (cont)
+}
+
+function scrollPage (i) {
+    i.scroll({
+        top: 1000000,
+        behavior: 'smooth'
+    });
+}
+
+clear.onclick = function clear (cl) {
+    let clearPath = document.getElementById('output').innerHTML = '';
 }

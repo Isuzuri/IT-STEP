@@ -1,3 +1,17 @@
+.output::-webkit-scrollbar {
+    width: 5px;    
+}
+
+.output::-webkit-scrollbar-track {
+    background-color: #dae1e8;
+}
+
+.output::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+    background-color: #b7c3ce;
+    border-radius: 10px;
+}
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -10,7 +24,7 @@ body {
     text-align: center;
 }
 
-button {
+.flex button {
     margin-top: 1.5rem;
     width: 5.5rem;
     height: 5.5rem;
@@ -21,7 +35,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.flex button:hover {
     background-color: rgb(133, 199, 133);
     transform: scale(1.2);
 }
@@ -31,4 +45,39 @@ footer {
     text-align: center;
     font-size: 1.5rem;
     text-decoration: underline red;
+}
+
+.output {
+    width: 700px;
+    height: 200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: azure;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    overflow-x: hidden;
+}
+
+.output p {
+    white-space: pre-line;
+}
+
+.clear {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: background-color 0.5s, color 0.2s;
+}
+
+.clear:hover {
+    background-color: rgb(211, 114, 114);
+    color: white;
 }
