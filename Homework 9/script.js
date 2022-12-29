@@ -1,13 +1,21 @@
+
+
 task1.onclick = function () {
     let x = 6;
     let y = 15;
     let z = 4;
-
-    console.log(x += y - x++ * z);
-    console.log(z = --x - y * 5);
-    console.log(y /= x + 5 % z);
-    console.log(z = x++ + y * 5);
-    console.log(x = y - x++ * z);
+    let cont = document.getElementById('output');
+    let add = document.createElement('p');
+    add.textContent = `${(x += y - x++ * z)}
+    ${(z = --x - y * 5)}
+    ${(y /= x + 5 % z)}
+    ${(z = x++ + y * 5)}
+    ${(x = y - x++ * z)}`
+    cont.appendChild(add);
+    let br = document.createElement('hr');
+    cont.appendChild(br);
+    scrollPage (cont)
+ 
 }
 
 task2.onclick = function() {
@@ -16,7 +24,7 @@ task2.onclick = function() {
     let arr = [a, b, c];
     let cont = document.getElementById('output');
     let add = document.createElement('p');
-    add.textContent = (`Введённый значения: ${arr.join(' ')} 
+    add.textContent = (`Введённые значения: ${arr.join(' ')} 
     Среднее арифметическое этих чисел: ${(a + b + c) / 3}`);
     cont.appendChild(add);
     let br = document.createElement('hr');
@@ -40,12 +48,12 @@ task3.onclick = function() {
 }
 
 function scrollPage (i) {
-    i.scroll({
-        top: 1000000,
+    i.scrollTo({
+        top: i.scrollHeight,
         behavior: 'smooth'
     });
 }
 
-clear.onclick = function clear (cl) {
+clear.onclick = function () {
     let clearPath = document.getElementById('output').innerHTML = '';
 }
