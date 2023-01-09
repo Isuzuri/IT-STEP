@@ -9,6 +9,10 @@
 }
 
 footer {
+    background-image: url(../images/wave.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom ;
     display: flex;
     gap: 1.5rem;
     margin-top: 5rem;
@@ -71,6 +75,7 @@ footer {
                 flex-wrap: wrap;
                 a {
                     width: 33%;
+                    margin: 1rem 0;
                     font-size: 0.875rem;
                     line-height: 1.5rem;
                     letter-spacing: 0.25px;
