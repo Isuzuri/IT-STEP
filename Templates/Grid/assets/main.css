@@ -1,0 +1,194 @@
+.hiw img {
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  z-index: -2;
+}
+.hiw .img__rect {
+  width: 50%;
+}
+.hiw .img__dots {
+  top: 6.4rem;
+  width: 15%;
+}
+.hiw .title {
+  margin: 4rem 0;
+  text-align: center;
+}
+.hiw .title h1 {
+  font-weight: 800;
+  font-size: 6rem;
+  line-height: 6.5rem;
+  letter-spacing: -3px;
+}
+.hiw .title h1 span {
+  position: relative;
+  color: #D63031;
+  text-shadow: 0px 4px 0px #FFFFFF;
+}
+.hiw .title h1 span::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  border-radius: 50px;
+  background-color: #55EFC4;
+  z-index: -1;
+}
+.hiw .title h2 {
+  margin-top: 1rem;
+  font-weight: 900;
+  font-size: 4rem;
+  line-height: 4.8rem;
+  letter-spacing: -1px;
+}
+.hiw .grid {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  grid-template-areas: "left-column up up" "left-column down down";
+  min-width: 1180px;
+  width: 1600px;
+  margin: 0 auto;
+}
+.hiw .grid > div > div {
+  border-radius: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hiw .grid .left-column {
+  grid-area: left-column;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.hiw .grid .left-column__title {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  color: #2D3436;
+}
+.hiw .grid .left-column__pic {
+  background-image: url(../images/sphere.png);
+  min-height: 464px;
+  padding: 1rem;
+}
+.hiw .grid .left-column__pic .pic__title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: white;
+}
+.hiw .grid .left-column__pic .pic__subtitle {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.25px;
+  text-align: center;
+  color: white;
+}
+.hiw .grid .left-column__button {
+  margin-top: 0.9rem;
+}
+.hiw .grid .left-column__button a {
+  display: block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  background-color: #6C5CE7;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: -0.5px;
+  color: white;
+}
+.hiw .grid .up {
+  grid-area: up;
+  display: inline-flex;
+  gap: 2rem;
+}
+.hiw .grid .up .large-pic {
+  display: flex;
+  justify-content: center;
+  background-image: url(../images/larpic.jpg);
+  width: 470px;
+  height: 380px;
+  padding: 0.5rem;
+}
+.hiw .grid .up .large-pic__title {
+  align-self: flex-end;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  text-align: center;
+  letter-spacing: -1px;
+  text-shadow: 0px 4px 0px #000000;
+  color: white;
+}
+.hiw .grid .up .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+.hiw .grid .up .desc__title {
+  width: calc(340px + 2rem);
+  align-self: flex-end;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  color: #2D3436;
+}
+.hiw .grid .up .desc__images {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+}
+.hiw .grid .up .desc__images > div {
+  width: 170px;
+  height: 222px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hiw .grid .up .desc__images .image-1 {
+  background-image: url(../images/Letter\ A.png);
+}
+.hiw .grid .up .desc__images .image-2 {
+  background-image: url(../images/Shoe.png);
+}
+.hiw .grid .down {
+  grid-area: down;
+  display: inline-flex;
+  gap: 2rem;
+}
+.hiw .grid .down > div {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hiw .grid .down .image-1 {
+  width: 270px;
+  height: 284px;
+  background-image: url(../images/book.png);
+}
+.hiw .grid .down .image-2 {
+  width: 370px;
+  height: 356px;
+  background-image: url(../images/goal.png);
+}
+.hiw .grid .down .image-2__title {
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  text-align: center;
+  letter-spacing: -1px;
+  text-shadow: 0px 4px 0px #000000;
+  color: white;
+}
+.hiw .grid .down .image-3 {
+  width: 170px;
+  height: 222px;
+  background-image: url(../images/shelf.png);
+}/*# sourceMappingURL=main.css.map */
