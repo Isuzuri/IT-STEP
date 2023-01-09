@@ -2,7 +2,14 @@
 @import url(nullstyle.css);
 @import url(navbar.css);
 @import url(main.css);
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-family: Inter;
   overflow-x: hidden;
+}
+body > * {
+  padding: 1rem 5%;
 }/*# sourceMappingURL=global.css.map */

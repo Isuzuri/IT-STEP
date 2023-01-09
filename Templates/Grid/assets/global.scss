@@ -4,7 +4,15 @@
 @import url(navbar.css);
 @import url(main.css);
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     font-family: Inter;
     overflow-x: hidden;
+
+    > * {
+        padding: 1rem 5%;
+    }
 }

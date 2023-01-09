@@ -225,3 +225,98 @@
 }
 
 //WHO WE ARE          SECTION
+.wwa {
+    margin: 5rem 0;
+
+    .desc {
+        &__title {
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 3rem;
+            letter-spacing: -0.5px;
+        }
+
+        &__subtitle {
+            margin: 1rem 0 2.5rem 0;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            letter-spacing: -0.25px;
+        }
+    }
+
+    .benefits {
+        display: flex;
+        gap: 1.875rem;
+
+        .card {
+            &__logo {
+                width: 4rem;
+                height: 4rem;
+                background-repeat: no-repeat;
+                background-size: 3.5rem 3.5rem;
+                background-position: center 0.5rem;
+                border-radius: 50%;
+            }
+
+            &__title {
+                margin: 1.5rem 0 1rem 0;
+                font-weight: 700;
+                font-size: 1.5rem;
+                line-height: 2rem;
+                letter-spacing: 0.25px;
+            }
+
+            &__desc {
+                margin: 1rem 0 0.5rem 0;
+                font-size: 1.125rem;
+                line-height: 2rem;
+            }
+
+            &__button {
+                a {
+                    padding: 0.5rem 1rem;
+                    border: 1px solid #adadad;
+                    border-radius: 15px;
+                    font-weight: 700;
+                    font-size: 1.125rem;
+                    line-height: 2rem;
+                    letter-spacing: 0.2px;
+                    color: #6C5CE7;
+                }
+            }
+        }
+
+        .support {
+            .card__logo {
+                background-color: #e0408f;
+                background-image: url(../icons/phone.svg);
+            }
+        }
+
+        .sales {
+            .card__logo {
+                background-color: #0981de;
+                background-image: url(../icons/sales.svg);
+            }
+        }
+
+        .coponents {
+            .card__logo {
+                background-color: #6c5ce7;
+                background-image: url(../icons/zap.svg);
+            }
+        }
+
+        .swap {
+            .card__logo {
+                background-color: #00b18f;
+                background-image: url(../icons/like.svg);
+            }
+        }
+    }
+}
+
+//WHAT WE DO          SECTION
+.wwd {
+    
+}
