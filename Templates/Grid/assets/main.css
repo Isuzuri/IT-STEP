@@ -1,3 +1,6 @@
+.hiw {
+  margin-top: 7rem;
+}
 .hiw img {
   position: absolute;
   top: 6rem;
@@ -212,6 +215,11 @@
   display: flex;
   gap: 1.875rem;
 }
+.wwa .benefits .card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
 .wwa .benefits .card__logo {
   width: 4rem;
   height: 4rem;
@@ -231,6 +239,10 @@
   margin: 1rem 0 0.5rem 0;
   font-size: 1.125rem;
   line-height: 2rem;
+}
+.wwa .benefits .card__button {
+  display: flex;
+  margin-top: auto;
 }
 .wwa .benefits .card__button a {
   padding: 0.5rem 1rem;
@@ -257,4 +269,129 @@
 .wwa .benefits .swap .card__logo {
   background-color: #00b18f;
   background-image: url(../icons/like.svg);
+}
+
+.wwd .title {
+  text-align: center;
+  margin-top: 4.5rem;
+  font-weight: 900;
+  font-size: 4rem;
+  line-height: 4.8rem;
+  letter-spacing: -1px;
+}
+.wwd .subtitle {
+  text-align: center;
+  margin-top: 1.875rem;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: -0.5px;
+  color: #ADADAD;
+}
+.wwd .subtitle span {
+  color: #6C5CE7;
+}
+.wwd .tariffs {
+  display: flex;
+}
+.wwd .tariffs .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: box-shadow 0.5s;
+}
+.wwd .tariffs .card:hover {
+  box-shadow: 0px 8px 8px rgba(38, 50, 56, 0.08);
+}
+.wwd .tariffs .card:hover .card__button a::after {
+  opacity: 1;
+}
+.wwd .tariffs .card__prefix {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  letter-spacing: 0.2px;
+  color: #6C5CE7;
+}
+.wwd .tariffs .card__price {
+  margin: 1rem 0 1.5rem;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  letter-spacing: -1px;
+}
+.wwd .tariffs .card__price span {
+  font-weight: 800;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+.wwd .tariffs .card__benefits li {
+  position: relative;
+  margin: 1rem 0 1rem 2.5rem;
+  font-size: 1.125rem;
+  line-height: 2rem;
+}
+.wwd .tariffs .card__benefits li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-image: url(../icons/check.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-backdrop-filter: blur(1.5rem);
+          backdrop-filter: blur(1.5rem);
+}
+.wwd .tariffs .card.free li::before {
+  background-color: #e2e2e2;
+}
+.wwd .tariffs .card.high li::before {
+  background-color: #fdcb6e;
+}
+.wwd .tariffs .card.medium li::before {
+  background-color: #aef8e3;
+}
+.wwd .tariffs .card__button {
+  display: flex;
+  margin-top: auto;
+}
+.wwd .tariffs .card__button a {
+  position: relative;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ADADAD;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  letter-spacing: 0.2px;
+  color: #6C5CE7;
+  transition: font-size 0.3s, background-color 0.3s, color 0.3s;
+}
+.wwd .tariffs .card__button a:hover {
+  font-size: 1.5rem;
+  background-color: #6C5CE7;
+  color: white;
+}
+.wwd .tariffs .card__button a::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: -1rem;
+  width: 10rem;
+  height: 2rem;
+  background-image: url(../icons/wiggle.svg);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: -1;
 }/*# sourceMappingURL=main.css.map */

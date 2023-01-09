@@ -2,10 +2,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  width: 100vw;
   top: 0;
-  left: 0;
   background-color: rgba(255, 255, 255, 0.75);
   box-shadow: 0px 2px 4px rgba(38, 50, 56, 0.16);
   z-index: 1000;
