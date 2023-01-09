@@ -49,10 +49,10 @@
 }
 .hiw .grid {
   display: grid;
-  grid-template-columns: 0.5fr 1.5fr 1fr;
+  grid-template-columns: 0.18fr 0.82fr;
   grid-template-rows: 1fr 1fr;
   gap: 2rem;
-  grid-template-areas: "left-column up up" "left-column down down";
+  grid-template-areas: "left-column up" "left-column down";
   min-width: 1180px;
   width: 1600px;
   margin: 0 auto;
