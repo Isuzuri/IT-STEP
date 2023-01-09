@@ -49,7 +49,7 @@
 }
 .hiw .grid {
   display: grid;
-  grid-template-columns: 0.18fr 0.82fr;
+  grid-template-columns: 0.25fr 0.75fr;
   grid-template-rows: 1fr 1fr;
   gap: 2rem;
   grid-template-areas: "left-column up" "left-column down";
@@ -74,7 +74,8 @@
 }
 .hiw .grid .left-column__pic {
   background-image: url(../images/sphere.png);
-  min-height: 464px;
+  width: 270px;
+  height: 464px;
   padding: 1rem;
 }
 .hiw .grid .left-column__pic .pic__title {
