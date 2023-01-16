@@ -1,0 +1,59 @@
+@import url(../forAll/variables.css);
+@import url(../forAll/typography.css);
+
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: black;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nav {
+    display: flex;
+    margin: 1rem 0 ;
+
+    > * {
+        padding: 0.2rem 0.5rem;
+        border: 1px solid var(--soft-black);
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: var(--gray-light);
+        }
+    }
+}
+
+#showArea {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    width: 95vw;
+    height: 50vh;
+    background-color: white;
+    overflow: hidden;
+
+    button {
+        padding: 0.3rem;
+        background-color: var(--soft-black);
+        color: white;
+    }
+}
+
+input {
+    margin: 0 1rem;
+    padding: 0.3rem;
+    text-align: center;
+    border-radius: 15px;
+    background-color: var(--green-light);
+    color: var(--red-dark);
+}
+
