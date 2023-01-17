@@ -1,8 +1,10 @@
 const getCoord = document.getElementById("nav");
 const showAreaPlace = document.getElementById("showArea");
+const task9Path = document.getElementById('task9');
 
 function createNavBar() {
     getCoord.removeChild(document.getElementById("but-del")); //Удаление элемента с ID but-del из контейнера nav 
+    showAreaPlace.style.display = 'flex';
     for (let i = 1; i <= 10; i++) {
         const createTaskButton = document.createElement("button"); // Запись в переменную создание элемента button
         createTaskButton.className = "p-bold"; // Присваивание созданному элементу класса p-bold
@@ -33,34 +35,44 @@ function createDesc(i) {
     showAreaPlace.appendChild(createDesciption);
 }
 
+function checkedTask(i) {
+    let child = getCoord.childNodes;
+    child[i].disabled = true;
+}
+
 function task1Create() {
     createDesc(`Введи сюда свой возраст`);
     createInput();
     createSubmit(1);
+    checkedTask(2);
 }
 
 function task2Create() {
     createDesc(`Введи число от 0 до 9 и я покажу спецсимвол`)
     createInput();
     createSubmit(2);
+    checkedTask(3);
 }
 
 function task3Create() {
     createDesc(`Введи число. Трёхзначное пжлст.`)
     createInput();
     createSubmit(3);
+    checkedTask(4);
 }
 
 function task4Create() {
     createDesc(`Введи год`)
     createInput();
     createSubmit(4);
+    checkedTask(5);
 }
 
 function task5Create() {
     createDesc(`Введи пятизначное число`)
     createInput();
     createSubmit(5);
+    checkedTask(6);
 }
 
 function task6Create() {
@@ -84,16 +96,19 @@ function task6Create() {
     createButton3.textContent = 'AZN';
     createButton3.setAttribute('onclick', "inAzn()")
     createButtonDiv.appendChild(createButton3);
+
+    checkedTask(7);
 }
 
 function task7Create() {
     createDesc(`Введи сумму покупки`)
     createInput();
     createSubmit(7);
+    checkedTask(8);
 }
 
 function task8Create() {
-    createDesc(`Введи сумму покупки`)
+    createDesc(`Можно ли поместить окружность внутрь квадрата?`)
     const createInputField1 = document.createElement('input');
     createInputField1.setAttribute('id', 'input1');
     createInputField1.className = 'minicaps';
@@ -105,6 +120,24 @@ function task8Create() {
     createInputField2.placeholder = 'А сюда периметр квадрата';
     showAreaPlace.appendChild(createInputField2);
     createSubmit(8);
+    checkedTask(9);
+}
+
+function task9Create() {
+    task9Path.style.display = 'block';
+    createSubmit(9);
+    checkedTask(10);
+}
+
+function task10Create() {
+    createDesc(`Введи дату`)
+    const createInputField = document.createElement('input');
+    createInputField.setAttribute('id', 'input');
+    createInputField.setAttribute('type', 'date');
+    createInputField.className = 'minicaps';
+    showAreaPlace.appendChild(createInputField);
+    createSubmit(10);
+    checkedTask(11);
 }
 
 // =============   Task 1-5   ==================== 
@@ -192,22 +225,22 @@ function inEur() {
     let getting = document.getElementById('input').value;
     const course = 0.92396;
     let converted = getting * course;
-    console.log(converted.toFixed(2));
+    console.log(converted.toFixed(2) + '€');
 }
 function inUah() {
     let getting = document.getElementById('input').value;
     const course = 36.91;
     let converted = getting * course;
-    console.log(converted.toFixed(2));
+    console.log(converted.toFixed(2) + '₴');
 }
 function inAzn() {
     let getting = document.getElementById('input').value;
     const course = 1.7;
     let converted = getting * course;
-    console.log(converted.toFixed(2));
+    console.log(converted.toFixed(2) + '₼');
 }
 
-// =============   Task 7  ====================
+// =============   Task 7 - 10 ====================
 function task7() {
     let getting = +document.getElementById('input').value;
     switch (true) {
@@ -230,8 +263,32 @@ function task7() {
 function task8() {
     let gettingCircle = +document.getElementById('input1').value;
     let gettingSquare = +document.getElementById('input2').value;
+    const PI = 3.14;
+    let radFromCircle = gettingCircle / (2 * PI);
+    let radfromSquare = gettingSquare / 8;
+    radfromSquare >= radFromCircle ? console.log('Окружность поместиться в такой квадрат') : console.log('Такая окружность не поместиться в данный квадрат')
 }
-// =============   Clear   ====================
-function clear() {
-    showAreaPlace.innerHTML = '';
+
+function task9() {
+    let count = 0;
+    let answer1 = document.getElementsByName('q1');
+    if (answer1[0].checked) {
+        count += 2;
+    } else console.log('1-ый вопрос: неверно');
+    let answer2 = document.getElementsByName('q2');
+    if (answer2[2].checked) {
+        count += 2;
+    } else console.log('2-ой вопрос: неверно');
+    let answer3 = document.getElementsByName('q3');
+    if (answer3[0].checked) {
+        count += 2;
+    } else console.log('3-ий вопрос: неверно');
+    console.log(`Всего баллов: ${count}`)
+}
+
+function task10() {
+    let getting = document.getElementById('input').value;
+    let date = new Date(getting);
+    date.setDate(date.getDate() + 1);
+    console.log(date);
 }
