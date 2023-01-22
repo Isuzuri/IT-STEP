@@ -243,6 +243,7 @@ function inAzn() {
 // =============   Task 7 - 10 ====================
 function task7() {
     let getting = +document.getElementById('input').value;
+    
     switch (true) {
         case (getting >= 0 && getting < 200):
             console.log(getting);
@@ -264,6 +265,7 @@ function task8() {
     let gettingCircle = +document.getElementById('input1').value;
     let gettingSquare = +document.getElementById('input2').value;
     const PI = 3.14;
+
     let radFromCircle = gettingCircle / (2 * PI);
     let radfromSquare = gettingSquare / 8;
     radfromSquare >= radFromCircle ? console.log('Окружность поместиться в такой квадрат') : console.log('Такая окружность не поместиться в данный квадрат')
@@ -271,14 +273,17 @@ function task8() {
 
 function task9() {
     let count = 0;
+
     let answer1 = document.getElementsByName('q1');
     if (answer1[0].checked) {
         count += 2;
     } else console.log('1-ый вопрос: неверно');
+
     let answer2 = document.getElementsByName('q2');
     if (answer2[2].checked) {
         count += 2;
     } else console.log('2-ой вопрос: неверно');
+
     let answer3 = document.getElementsByName('q3');
     if (answer3[0].checked) {
         count += 2;

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="code">
+            <div class="code-task">
+                <div class="task-number">1</div>
+<code>
+    function returnMin(num1, num2) {
+        return(Math.min(num1, num2));
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">2</div>
+<code>
+    function numInExponent(num1, exponent) {
+        return(num1 ** exponent);
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">3</div>
+<code>
+    function calculateTwoNumbers(num1, num2, sign) {
+        switch (sign) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            case '/':
+                return num1 / num2;
+        }
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">4</div>
+<code>
+    function isItPrimeNumber(num) {
+        for (i = 2; i < num; ) {
+            if (num % i === 0) {
+                return false;
+            } else i++
+        }
+        return true;
+    }
+</code>
+            </div>
+        </div>
+        <div id="interaction">
+            <div class="task-UI">
+                <div id="task-1">
+                    <div class="task-number">1</div>
+                    <div>
+                        <h3>Написать функцию, которая принимает 2 числа и возвращает меньшее из них.</h3>
+                        <input type="number" placeholder="Number 1">
+                        <input type="number" placeholder="Number 2">
+                        <input type="submit" value="Submit" onclick="returnMin()">
+                    </div>
+                </div>
+                <div id="task-2">
+                    <div class="task-number">2</div>
+                    <div>
+                        <h3>Написать функцию, которая возводит переданное число в указанную степень.</h3>
+                        <input type="number" placeholder="Number">
+                        <input type="number" placeholder="Exponent">
+                        <input type="submit" value="Submit" onclick="numInExponent()">
+                    </div>
+                </div>
+                <div id="task-3">
+                    <div class="task-number">3</div>
+                    <div>
+                        <h3>Написать функцию, которая принимает 2 числа и знак (+ - * /), считает пример и возвращает результат.</h3>
+                        <input type="number" placeholder="Number 1">
+                        <input type="number" placeholder="Number 2">
+                        <input type="text" placeholder="Sign (+ - * /)">
+                        <input type="submit" value="Submit" onclick="calculateTwoNumbers()">
+                    </div>
+                </div>
+                <div id="task-4">
+                    <div class="task-number">4</div>
+                    <div>
+                        <h3>Написать функцию, которая проверяет, является ли переданное ей число простым.</h3>
+                        <input type="number" placeholder="Number">
+                        <input type="submit" value="Submit" onclick="isItPrimeNumber()">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="console">Result</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
