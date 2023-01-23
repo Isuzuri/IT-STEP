@@ -13,32 +13,30 @@
             <div class="code-task">
                 <div class="task-number">1</div>
 <code>
-    function returnMin(num1, num2) {
-        return(Math.min(num1, num2));
+    let sum = 0;
+    while (from <= to) {
+        sum += from;
+        from++;
     }
 </code>
             </div>
             <div class="code-task">
                 <div class="task-number">2</div>
 <code>
-    function numInExponent(num1, exponent) {
-        return(num1 ** exponent);
+    for (i = Math.min(num1, num2) - 1; i > 0; i--) {
+        if (num1 % i === 0 && num2 % i === 0) {
+            console.log = i;
+            break
+        } 
     }
 </code>
             </div>
             <div class="code-task">
                 <div class="task-number">3</div>
 <code>
-    function calculateTwoNumbers(num1, num2, sign) {
-        switch (sign) {
-            case '+':
-                return num1 + num2;
-            case '-':
-                return num1 - num2;
-            case '*':
-                return num1 * num2;
-            case '/':
-                return num1 / num2;
+    for (i = 1; i <= num; i++) {
+        if (num % i === 0) {
+            console.log(i);
         }
     }
 </code>
@@ -46,14 +44,35 @@
             <div class="code-task">
                 <div class="task-number">4</div>
 <code>
-    function isItPrimeNumber(num) {
-        for (i = 2; i < num; ) {
-            if (num % i === 0) {
-                return false;
-            } else i++
-        }
-        return true;
+    for (i = 0; num[i] !== undefined; i++) {
     }
+    console.log = i;
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">5</div>
+<code>
+    let moreThanNull = 0;
+    let lessThanNull = 0;
+    let howManyNull = 0;
+
+    for(i = 1; i <= 10; i++) {
+        let num = prompt(`Введи число ${i}`);
+        switch (true) {
+            case (num > 0):
+                moreThanNull += 1;
+                continue;
+            case (num < 0):
+                lessThanNull += 1;
+                continue;
+            case (num === 0):
+            howManyNull += 1;
+                continue;
+        }
+    }
+    console.log(moreThanNull)
+    console.log(lessThanNull)
+    console.log(howManyNull)
 </code>
             </div>
         </div>
@@ -62,37 +81,52 @@
                 <div id="task-1">
                     <div class="task-number">1</div>
                     <div>
-                        <h3>Написать функцию, которая принимает 2 числа и возвращает меньшее из них.</h3>
-                        <input type="number" placeholder="Number 1">
-                        <input type="number" placeholder="Number 2">
-                        <input type="submit" value="Submit" onclick="returnMin()">
+                        <h3>Подсчитать сумму всех чисел в заданном пользователем диапазоне.</h3>
+                        <input type="number" placeholder="From">
+                        <input type="number" placeholder="To">
+                        <input type="submit" value="Submit" onclick="sumAll()">
                     </div>
                 </div>
                 <div id="task-2">
                     <div class="task-number">2</div>
                     <div>
-                        <h3>Написать функцию, которая возводит переданное число в указанную степень.</h3>
-                        <input type="number" placeholder="Number">
-                        <input type="number" placeholder="Exponent">
-                        <input type="submit" value="Submit" onclick="numInExponent()">
+                        <h3>Запросить 2 числа и найти только наибольший общий делитель.</h3>
+                        <input type="number" placeholder="Number 1">
+                        <input type="number" placeholder="Number 2">
+                        <input type="submit" value="Submit" onclick="biggestDivider()">
                     </div>
                 </div>
                 <div id="task-3">
                     <div class="task-number">3</div>
                     <div>
-                        <h3>Написать функцию, которая принимает 2 числа и знак (+ - * /), считает пример и возвращает результат.</h3>
-                        <input type="number" placeholder="Number 1">
-                        <input type="number" placeholder="Number 2">
-                        <input type="text" placeholder="Sign (+ - * /)">
-                        <input type="submit" value="Submit" onclick="calculateTwoNumbers()">
+                        <h3>Запросить у пользователя число и вывести все делители этого числа.</h3>
+                        <input type="number" placeholder="Number">
+                        <input type="submit" value="Submit" onclick="allDividers()">
                     </div>
                 </div>
                 <div id="task-4">
                     <div class="task-number">4</div>
                     <div>
-                        <h3>Написать функцию, которая проверяет, является ли переданное ей число простым.</h3>
+                        <h3>Определить количество цифр в введенном числе.</h3>
                         <input type="number" placeholder="Number">
-                        <input type="submit" value="Submit" onclick="isItPrimeNumber()">
+                        <input type="submit" value="Submit" onclick="howManyNumbers()">
+                    </div>
+                </div>
+                <div id="task-5">
+                    <div class="task-number">5</div>
+                    <div>
+                        <h3>Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран. Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.</h3>
+                        <input type="number" placeholder="Num 1">
+                        <input type="number" placeholder="Num 2">
+                        <input type="number" placeholder="Num 3">
+                        <input type="number" placeholder="Num 4">
+                        <input type="number" placeholder="Num 5">
+                        <input type="number" placeholder="Num 6">
+                        <input type="number" placeholder="Num 7">
+                        <input type="number" placeholder="Num 8">
+                        <input type="number" placeholder="Num 9">
+                        <input type="number" placeholder="Num 10">
+                        <input type="submit" value="Submit" onclick="inputStat()" style="margin-top: 0.5rem;">
                     </div>
                 </div>
             </div>

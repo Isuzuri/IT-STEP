@@ -1,51 +1,70 @@
-let output = document.querySelector('#console');
-let code = document.querySelector('#code');
+const output = document.querySelector('#console');
+const code = document.querySelector('#code');
 
-function returnMin() {
-    let num1 = +document.querySelector('#task-1 [placeholder="Number 1"]').value; 
-    let num2 = +document.querySelector('#task-1 [placeholder="Number 2"]').value;
-    let result = Math.min(num1, num2);
-    console.log(result);
-    output.innerText = result;
+function sumAll() {
+    let from = +document.querySelector('#task-1 input[placeholder="From"]').value;
+    let to = +document.querySelector('#task-1 input[placeholder="To"]').value;
+
+    let sum = 0;
+    while (from <= to) {
+        sum += from;
+        from++;
+    }
+    output.innerText = sum;
 }
 
-function numInExponent() {
-    let num1 = +document.querySelector('#task-2 [placeholder="Number"]').value; 
-    let num2 = +document.querySelector('#task-2 [placeholder="Exponent"]').value; 
-    let result = num1 ** num2;
-    console.log(result);
-    output.innerText = result;
-}
+function biggestDivider() {
+    let num1 = +document.querySelector('#task-2 input[placeholder="Number 1"]').value;
+    let num2 = +document.querySelector('#task-2 input[placeholder="Number 2"]').value;
 
-function calculateTwoNumbers() {
-    const num1 = +document.querySelector('#task-3 [placeholder="Number 1"]').value; 
-    const num2 = +document.querySelector('#task-3 [placeholder="Number 2"]').value; 
-    const sign = document.querySelector('#task-3 [placeholder="Sign (+ - * /)"]').value; 
-    console.log(typeof sign)
-    console.log(sign)
-    switch (sign) {
-        case '+':
-            output.innerText = num1 + num2;
-            break;
-        case '-':
-            output.innerText = num1 - num2;
-            break;
-        case '*':
-            output.innerText = num1 * num2;
-            break;
-        case '/':
-            output.innerText = num1 / num2;
-            break;
+    for (i = Math.min(num1, num2) - 1; i > 0; i--) {
+        if (num1 % i === 0 && num2 % i === 0) {
+            output.innerText = i;
+            break
+        } 
     }
 }
 
-function isItPrimeNumber() {
-    const num = +document.querySelector('#task-4 [placeholder="Number"]').value;
-    for (i = 2; i < num; ) {
+function allDividers() {
+    let num = +document.querySelector('#task-3 input[placeholder="Number"]').value;
+    output.innerText = '';
+
+    for (i = 1; i <= num; i++) {
         if (num % i === 0) {
-            output.innerText = 'Not Simple';
-            return;
-        } else i++
+            output.innerText += ` ${i}`;
+        }
     }
-    output.innerText = 'Simple';
+}
+
+function howManyNumbers() {
+    let num = document.querySelector('#task-4 input[placeholder="Number"]').value;
+
+    for (i = 0; num[i] !== undefined; i++) {
+    }
+    output.innerText = i;
+}
+
+function inputStat() {
+    let moreThanNull = 0;
+    let lessThanNull = 0;
+    let howManyNull = 0;
+
+    for(i = 1; i <= 10; i++) {
+        let num = +document.querySelector(`#task-5 [placeholder="Num ${i}"]`).value;
+        switch (true) {
+            case (num > 0):
+                moreThanNull += 1;
+                continue;
+            case (num < 0):
+                lessThanNull += 1;
+                continue;
+            case (num === 0):
+                howManyNull += 1;
+                continue;
+        }
+    }
+
+    output.innerHTML = `Больше нуля: ${moreThanNull} </br>`;
+    output.innerHTML += `Меньше нуля: ${lessThanNull} </br>`;
+    output.innerHTML += `Равно нулю: ${howManyNull}`;
 }
