@@ -75,6 +75,36 @@
     console.log(howManyNull)
 </code>
             </div>
+            <div class="code-task">
+                <div class="task-number">6</div>
+<code>
+    function calc() {
+        while (true) {
+            let num1 = +prompt('Введи число 1');
+            let num2 = +prompt('Введи число 2');
+            let sign = prompt('Введи знак ( + - * / )');
+            switch (sign) {
+                case '+':
+                    alert(num1 + num2);
+                    break;
+                case '-':
+                    alert(num1 - num2);
+                    break;
+                case '*':
+                    alert(num1 * num2);
+                    break;
+                case '/':
+                    alert(num1 / num2);
+                    break;
+            }
+            let repeat = (confirm('Ещё что-то посчитать?'));
+            if (repeat == false) {
+                return false;
+            }
+        }
+    }
+</code>
+            </div>
         </div>
         <div id="interaction">
             <div class="task-UI">
@@ -127,6 +157,16 @@
                         <input type="number" placeholder="Num 9">
                         <input type="number" placeholder="Num 10">
                         <input type="submit" value="Submit" onclick="inputStat()" style="margin-top: 0.5rem;">
+                    </div>
+                </div>
+                <div id="task-6">
+                    <div class="task-number">6</div>
+                    <div id="calcDiv">
+                        <h3>Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.</h3>
+                        <input type="number" placeholder="Number 1">
+                        <input type="number" placeholder="Number 2">
+                        <input type="text" placeholder="Sign">
+                        <input type="submit" value="Submit" onclick="calc()">
                     </div>
                 </div>
             </div>

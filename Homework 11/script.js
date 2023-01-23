@@ -68,3 +68,32 @@ function inputStat() {
     output.innerHTML += `Меньше нуля: ${lessThanNull} </br>`;
     output.innerHTML += `Равно нулю: ${howManyNull}`;
 }
+
+function calc() {
+    let num1 = +document.querySelector('#task-6 input[placeholder="Number 1"]').value;
+    let num2= +document.querySelector('#task-6 input[placeholder="Number 2"]').value;
+    let sign = document.querySelector('#task-6 input[placeholder="Sign"]').value;
+    let calcDiv = document.getElementById('calcDiv').childNodes;
+    switch (sign) {
+        case '+':
+            output.innerText = num1 + num2;
+            break;
+        case '-':
+            output.innerText = num1 - num2;
+            break;
+        case '*':
+            output.innerText = num1 * num2;
+            break;
+        case '/':
+            output.innerText = num1 / num2;
+            break;
+    }
+    let repeat = confirm('Ещё что-то посчитать?');
+    if (repeat == false) {
+        for (i = 3; i <= 9; i += 2){
+            calcDiv[i].disabled = true;
+            
+        }
+    }
+    
+}
