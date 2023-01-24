@@ -161,3 +161,21 @@ function showMultTable() {
         createTable.appendChild(tr);
     }
 }
+
+function guessTheNumber() {
+    let num = +prompt('Загадай число от 1 от 100');
+    let left = 1;
+    let right = 100;
+    
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (mid == num) {
+            alert(`Ты загадал число ${num}`);
+            break;
+        } else if (confirm(`Твоё число больше ${mid} ?`)) {
+            left = mid;
+        } else {
+            right = mid;
+        }
+    }
+}

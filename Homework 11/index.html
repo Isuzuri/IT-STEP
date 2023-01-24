@@ -163,6 +163,27 @@
     }
 </code>
             </div>
+            <div class="code-task">
+                <div class="task-number">10</div>
+<code>
+    let num = +prompt('Загадай число от 1 от 100');
+    let left = 1;
+    let right = 100;
+    
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        
+        if (mid == num) {
+            alert(`Ты загадал число ${num}`);
+            break;
+        } else if (confirm(`Твоё число больше ${mid} ?`)) {
+            left = mid;
+        } else {
+            right = mid;
+        }
+    }
+</code>
+            </div>
         </div>
         <div id="interaction">
             <div class="task-UI">
@@ -248,6 +269,13 @@
                     <div>
                         <h3>Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.</h3>
                         <input type="submit" value="Submit" onclick="showMultTable()">
+                    </div>
+                </div>
+                <div id="task-10">
+                    <div class="task-number">10</div>
+                    <div>
+                        <h3>Игра «Угадай число». Предложить пользователю загадать число от 0 до 100 и отгадать его следующим способом: каждую итерацию цикла делите диапазон чисел пополам, записываете результат в N и спрашиваете у пользователя «Ваше число > N, < N или == N?». В зависимости от того что указал пользователь, уменьшаете диапазон. Начальный диапазон от 0 до 100, поделили пополам и получили 50. Если пользователь указал, что его число > 50, то изменили диапазон на от 51 до 100. И так до тех пор, пока пользователь не выберет == N.</h3>
+                        <input type="submit" value="Submit" onclick="guessTheNumber()">
                     </div>
                 </div>
             </div>
