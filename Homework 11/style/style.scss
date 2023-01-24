@@ -33,6 +33,7 @@ h3 {
 #code {
     grid-area: code;
     height: 100vh;
+    overflow-y: scroll;
     
     code {
         margin: 1rem 0;
@@ -87,10 +88,12 @@ h3 {
     }
 
     input {
+        margin: 0.25rem 0;
         padding: 0.5rem 1rem;
     }
     
     input[type="submit"] {
+        margin: 0.25rem 0;
         transition: 0.3s;
         cursor: pointer;
     }
@@ -108,4 +111,22 @@ h3 {
 
 .code-task {
     display: flex;
+}
+
+table {
+    thead, td:nth-child(1){
+        background-color: white;
+        color: black;
+    }
+
+    thead td:nth-child(1) {
+        visibility: hidden;
+    }
+
+    td {
+        width: 5rem;
+        height: 3.5rem;
+        font-size: 2.2rem;
+        border: 1px solid white;
+    }
 }

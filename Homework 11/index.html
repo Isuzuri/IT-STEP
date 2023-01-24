@@ -105,6 +105,64 @@
     }
 </code>
             </div>
+            <div class="code-task">
+                <div class="task-number">7</div>
+<code>
+    function offsetNumber() {
+        let num = prompt('Введи число')
+        let offset= prompt('На сколько знаков сдвинуть?')
+        
+        console.log = num.substring(offset) + num.substring(0, offset);
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">8</div>
+<code>
+    function showWeekDay() {
+        let day = '';
+        for (i = 0; confirm(day + 'Хотите увидеть следующий день?'); i++) {
+            switch (i) {
+                case 0: 
+                    day = 'Понедельник. ';
+                    break;
+                case 1: 
+                    day = 'Вторник. ';
+                    break;
+                case 2: 
+                    day = 'Среда. ';
+                    break;
+                case 3: 
+                    day = 'Четверг. ';
+                    break;
+                case 4: 
+                    day = 'Пятница. ';
+                    break;
+                case 5: 
+                    day = 'Суббота. ';
+                    break;
+                case 6: 
+                    day = 'Воскресенье. ';
+                    i = -1;
+                    break;
+            }
+        }
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">9</div>
+<code>
+    function showMultTable() {
+        for (i = 2; i <= 9; i++) {
+            
+            for(j = 1; j <= 10; j++) {
+                console.log(i * j);
+            }
+        }
+    }
+</code>
+            </div>
         </div>
         <div id="interaction">
             <div class="task-UI">
@@ -156,7 +214,7 @@
                         <input type="number" placeholder="Num 8">
                         <input type="number" placeholder="Num 9">
                         <input type="number" placeholder="Num 10">
-                        <input type="submit" value="Submit" onclick="inputStat()" style="margin-top: 0.5rem;">
+                        <input type="submit" value="Submit" onclick="inputStat()">
                     </div>
                 </div>
                 <div id="task-6">
@@ -167,6 +225,29 @@
                         <input type="number" placeholder="Number 2">
                         <input type="text" placeholder="Sign">
                         <input type="submit" value="Submit" onclick="calc()">
+                    </div>
+                </div>
+                <div id="task-7">
+                    <div class="task-number">7</div>
+                    <div>
+                        <h3>Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).</h3>
+                        <input type="number" placeholder="Number">
+                        <input type="number" placeholder="Offset">
+                        <input type="submit" value="Submit" onclick="offsetNumber()">
+                    </div>
+                </div>
+                <div id="task-8">
+                    <div class="task-number">8</div>
+                    <div>
+                        <h3>Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.</h3>
+                        <input type="submit" value="Submit" onclick="showWeekDay()">
+                    </div>
+                </div>
+                <div id="task-9">
+                    <div class="task-number">9</div>
+                    <div>
+                        <h3>Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.</h3>
+                        <input type="submit" value="Submit" onclick="showMultTable()">
                     </div>
                 </div>
             </div>

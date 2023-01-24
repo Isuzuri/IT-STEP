@@ -97,3 +97,67 @@ function calc() {
     }
     
 }
+
+function offsetNumber() {
+    let num = document.querySelector('#task-7 input[placeholder="Number"]').value;
+    let offset= document.querySelector('#task-7 input[placeholder="Offset"]').value;
+    
+    output.innerText = num.substring(offset) + num.substring(0, offset);
+}
+
+function showWeekDay() {
+    let day = '';
+    for (i = 0; confirm(day + 'Хотите увидеть следующий день?'); i++) {
+        switch (i) {
+            case 0: 
+                day = 'Понедельник. ';
+                break;
+            case 1: 
+                day = 'Вторник. ';
+                break;
+            case 2: 
+                day = 'Среда. ';
+                break;
+            case 3: 
+                day = 'Четверг. ';
+                break;
+            case 4: 
+                day = 'Пятница. ';
+                break;
+            case 5: 
+                day = 'Суббота. ';
+                break;
+            case 6: 
+                day = 'Воскресенье. ';
+                i = -1;
+                break;
+        }
+    }
+}
+
+function showMultTable() {
+    output.innerHTML = '';
+    let createTable = document.createElement('table');
+    output.appendChild(createTable);
+
+    let thead = document.createElement('thead');
+    createTable.appendChild(thead);
+    
+    for (k = 1; k <= 10; k++) {
+        let td = document.createElement('td');
+        td.textContent = k;
+        thead.appendChild(td);
+    }
+
+    for (i = 2; i <= 9; i++) {
+        let tr = document.createElement('tr');
+
+        for(j = 1; j <= 10; j++) {
+            let td = document.createElement('td');
+            td.textContent = i * j;
+            tr.appendChild(td);
+        }
+
+        createTable.appendChild(tr);
+    }
+}
