@@ -106,8 +106,8 @@ function offsetNumber() {
 }
 
 function showWeekDay() {
-    let day = '';
-    for (i = 0; confirm(day + 'Хотите увидеть следующий день?'); i++) {
+    let day = 'Понедельник. ';
+    for (i = 1; confirm(day + 'Хотите увидеть следующий день?'); i++) {
         switch (i) {
             case 0: 
                 day = 'Понедельник. ';
