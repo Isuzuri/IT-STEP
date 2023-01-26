@@ -78,29 +78,27 @@
             <div class="code-task">
                 <div class="task-number">6</div>
 <code>
-    function calc() {
-        while (true) {
-            let num1 = +prompt('Введи число 1');
-            let num2 = +prompt('Введи число 2');
-            let sign = prompt('Введи знак ( + - * / )');
-            switch (sign) {
-                case '+':
-                    alert(num1 + num2);
-                    break;
-                case '-':
-                    alert(num1 - num2);
-                    break;
-                case '*':
-                    alert(num1 * num2);
-                    break;
-                case '/':
-                    alert(num1 / num2);
-                    break;
-            }
-            let repeat = (confirm('Ещё что-то посчитать?'));
-            if (repeat == false) {
-                return false;
-            }
+    while (true) {
+        let num1 = +prompt('Введи число 1');
+        let num2 = +prompt('Введи число 2');
+        let sign = prompt('Введи знак ( + - * / )');
+        switch (sign) {
+            case '+':
+                alert(num1 + num2);
+                break;
+            case '-':
+                alert(num1 - num2);
+                break;
+            case '*':
+                alert(num1 * num2);
+                break;
+            case '/':
+                alert(num1 / num2);
+                break;
+        }
+        let repeat = (confirm('Ещё что-то посчитать?'));
+        if (repeat == false) {
+            return false;
         }
     }
 </code>
@@ -108,44 +106,40 @@
             <div class="code-task">
                 <div class="task-number">7</div>
 <code>
-    function offsetNumber() {
-        let num = prompt('Введи число')
-        let offset= prompt('На сколько знаков сдвинуть?')
-        
-        console.log = num.substring(offset) + num.substring(0, offset);
-    }
+    let num = prompt('Введи число')
+    let offset= prompt('На сколько знаков сдвинуть?')
+    
+    console.log = num.substring(offset) + num.substring(0, offset);
 </code>
             </div>
             <div class="code-task">
                 <div class="task-number">8</div>
 <code>
-    function showWeekDay() {
-        let day = '';
-        for (i = 0; confirm(day + 'Хотите увидеть следующий день?'); i++) {
-            switch (i) {
-                case 0: 
-                    day = 'Понедельник. ';
-                    break;
-                case 1: 
-                    day = 'Вторник. ';
-                    break;
-                case 2: 
-                    day = 'Среда. ';
-                    break;
-                case 3: 
-                    day = 'Четверг. ';
-                    break;
-                case 4: 
-                    day = 'Пятница. ';
-                    break;
-                case 5: 
-                    day = 'Суббота. ';
-                    break;
-                case 6: 
-                    day = 'Воскресенье. ';
-                    i = -1;
-                    break;
-            }
+    let day = 'Понедельник. ';
+    for (i = 0; confirm(day + 'Хотите увидеть следующий день?'); i++) {
+        switch (i) {
+            case 0: 
+                day = 'Понедельник. ';
+                break;
+            case 1: 
+                day = 'Вторник. ';
+                break;
+            case 2: 
+                day = 'Среда. ';
+                break;
+            case 3: 
+                day = 'Четверг. ';
+                break;
+            case 4: 
+                day = 'Пятница. ';
+                break;
+            case 5: 
+                day = 'Суббота. ';
+                break;
+            case 6: 
+                day = 'Воскресенье. ';
+                i = -1;
+                break;
         }
     }
 </code>
@@ -153,12 +147,10 @@
             <div class="code-task">
                 <div class="task-number">9</div>
 <code>
-    function showMultTable() {
-        for (i = 2; i <= 9; i++) {
-            
-            for(j = 1; j <= 10; j++) {
-                console.log(i * j);
-            }
+    for (i = 2; i <= 9; i++) {
+        
+        for(j = 1; j <= 10; j++) {
+            console.log(i * j);
         }
     }
 </code>
