@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="code">
+            <div class="code-task">
+                <div class="task-number">1</div>
+<code>
+    let sum = 0;
+    while (from <= to) {
+        sum += from;
+        from++;
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">2</div>
+<code>
+    for (i = Math.min(num1, num2) - 1; i > 0; i--) {
+        if (num1 % i === 0 && num2 % i === 0) {
+            console.log = i;
+            break
+        } 
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">3</div>
+<code>
+    for (i = 1; i <= num; i++) {
+        if (num % i === 0) {
+            console.log(i);
+        }
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">4</div>
+<code>
+    for (i = 0; num[i] !== undefined; i++) {
+    }
+    console.log = i;
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">5</div>
+<code>
+    let moreThanNull = 0;
+    let lessThanNull = 0;
+    let howManyNull = 0;
+
+    for(i = 1; i <= 10; i++) {
+        let num = prompt(`Введи число ${i}`);
+        switch (true) {
+            case (num > 0):
+                moreThanNull += 1;
+                continue;
+            case (num < 0):
+                lessThanNull += 1;
+                continue;
+            case (num === 0):
+            howManyNull += 1;
+                continue;
+        }
+    }
+    console.log(moreThanNull)
+    console.log(lessThanNull)
+    console.log(howManyNull)
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">6</div>
+<code>
+    while (true) {
+        let num1 = +prompt('Введи число 1');
+        let num2 = +prompt('Введи число 2');
+        let sign = prompt('Введи знак ( + - * / )');
+        switch (sign) {
+            case '+':
+                alert(num1 + num2);
+                break;
+            case '-':
+                alert(num1 - num2);
+                break;
+            case '*':
+                alert(num1 * num2);
+                break;
+            case '/':
+                alert(num1 / num2);
+                break;
+        }
+        let repeat = (confirm('Ещё что-то посчитать?'));
+        if (repeat == false) {
+            return false;
+        }
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">7</div>
+<code>
+    let num = prompt('Введи число')
+    let offset= prompt('На сколько знаков сдвинуть?')
+    
+    console.log = num.substring(offset) + num.substring(0, offset);
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">8</div>
+<code>
+    let day = 'Понедельник. ';
+    for (i = 0; confirm(day + 'Хотите увидеть следующий день?'); i++) {
+        switch (i) {
+            case 0: 
+                day = 'Понедельник. ';
+                break;
+            case 1: 
+                day = 'Вторник. ';
+                break;
+            case 2: 
+                day = 'Среда. ';
+                break;
+            case 3: 
+                day = 'Четверг. ';
+                break;
+            case 4: 
+                day = 'Пятница. ';
+                break;
+            case 5: 
+                day = 'Суббота. ';
+                break;
+            case 6: 
+                day = 'Воскресенье. ';
+                i = -1;
+                break;
+        }
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">9</div>
+<code>
+    for (i = 2; i <= 9; i++) {
+        
+        for(j = 1; j <= 10; j++) {
+            console.log(i * j);
+        }
+    }
+</code>
+            </div>
+            <div class="code-task">
+                <div class="task-number">10</div>
+<code>
+    let num = +prompt('Загадай число от 1 от 100');
+    let left = 1;
+    let right = 100;
+    
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        
+        if (mid == num) {
+            alert(`Ты загадал число ${num}`);
+            break;
+        } else if (confirm(`Твоё число больше ${mid} ?`)) {
+            left = mid;
+        } else {
+            right = mid;
+        }
+    }
+</code>
+            </div>
+        </div>
+        <div id="interaction">
+            <div class="task-UI">
+                <div id="task-1">
+                    <div class="task-number">1</div>
+                    <div>
+                        <h3>Подсчитать сумму всех чисел в заданном пользователем диапазоне.</h3>
+                        <input type="number" placeholder="From">
+                        <input type="number" placeholder="To">
+                        <input type="submit" value="Submit" onclick="sumAll()">
+                    </div>
+                </div>
+                <div id="task-2">
+                    <div class="task-number">2</div>
+                    <div>
+                        <h3>Запросить 2 числа и найти только наибольший общий делитель.</h3>
+                        <input type="number" placeholder="Number 1">
+                        <input type="number" placeholder="Number 2">
+                        <input type="submit" value="Submit" onclick="biggestDivider()">
+                    </div>
+                </div>
+                <div id="task-3">
+                    <div class="task-number">3</div>
+                    <div>
+                        <h3>Запросить у пользователя число и вывести все делители этого числа.</h3>
+                        <input type="number" placeholder="Number">
+                        <input type="submit" value="Submit" onclick="allDividers()">
+                    </div>
+                </div>
+                <div id="task-4">
+                    <div class="task-number">4</div>
+                    <div>
+                        <h3>Определить количество цифр в введенном числе.</h3>
+                        <input type="number" placeholder="Number">
+                        <input type="submit" value="Submit" onclick="howManyNumbers()">
+                    </div>
+                </div>
+                <div id="task-5">
+                    <div class="task-number">5</div>
+                    <div>
+                        <h3>Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран. Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.</h3>
+                        <input type="number" placeholder="Num 1">
+                        <input type="number" placeholder="Num 2">
+                        <input type="number" placeholder="Num 3">
+                        <input type="number" placeholder="Num 4">
+                        <input type="number" placeholder="Num 5">
+                        <input type="number" placeholder="Num 6">
+                        <input type="number" placeholder="Num 7">
+                        <input type="number" placeholder="Num 8">
+                        <input type="number" placeholder="Num 9">
+                        <input type="number" placeholder="Num 10">
+                        <input type="submit" value="Submit" onclick="inputStat()">
+                    </div>
+                </div>
+                <div id="task-6">
+                    <div class="task-number">6</div>
+                    <div id="calcDiv">
+                        <h3>Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.</h3>
+                        <input type="number" placeholder="Number 1">
+                        <input type="number" placeholder="Number 2">
+                        <input type="text" placeholder="Sign">
+                        <input type="submit" value="Submit" onclick="calc()">
+                    </div>
+                </div>
+                <div id="task-7">
+                    <div class="task-number">7</div>
+                    <div>
+                        <h3>Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).</h3>
+                        <input type="number" placeholder="Number">
+                        <input type="number" placeholder="Offset">
+                        <input type="submit" value="Submit" onclick="offsetNumber()">
+                    </div>
+                </div>
+                <div id="task-8">
+                    <div class="task-number">8</div>
+                    <div>
+                        <h3>Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.</h3>
+                        <input type="submit" value="Submit" onclick="showWeekDay()">
+                    </div>
+                </div>
+                <div id="task-9">
+                    <div class="task-number">9</div>
+                    <div>
+                        <h3>Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.</h3>
+                        <input type="submit" value="Submit" onclick="showMultTable()">
+                    </div>
+                </div>
+                <div id="task-10">
+                    <div class="task-number">10</div>
+                    <div>
+                        <h3>Игра «Угадай число». Предложить пользователю загадать число от 0 до 100 и отгадать его следующим способом: каждую итерацию цикла делите диапазон чисел пополам, записываете результат в N и спрашиваете у пользователя «Ваше число > N, < N или == N?». В зависимости от того что указал пользователь, уменьшаете диапазон. Начальный диапазон от 0 до 100, поделили пополам и получили 50. Если пользователь указал, что его число > 50, то изменили диапазон на от 51 до 100. И так до тех пор, пока пользователь не выберет == N.</h3>
+                        <input type="submit" value="Submit" onclick="guessTheNumber()">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="console">Result</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

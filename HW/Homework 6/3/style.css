@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: rgb(245,245,245);
+}
+/* =================HEADER=================== */
+header {
+    display: flex;
+    padding: 1.5rem;
+    justify-content: space-between;
+    border-bottom: 0.15rem solid rgba(59, 59, 59, 0.3);
+}
+
+.mail {
+    display: flex;
+    align-self: flex-start;
+    text-transform: uppercase;
+}
+
+.mail > *, .profile > * {
+    display: inline-block;
+    margin: auto 0.5rem;
+}
+
+.profile-img, .mail-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mail-img {
+    background-image: url(icons/mail.png);
+}
+
+.mail-text {
+    font-size: 1.3rem;
+}
+
+.profile {
+    display: flex;
+    align-self: flex-end;
+}
+
+.profile-text {
+    font-size: 1.2rem;
+}
+
+.profile-img {
+    background-image: url(icons/account.png);
+}
+/* =================HEADER=================== */
+
+.grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+/* =================ASIDE==================== */
+aside {
+    margin: 1rem 1rem 0;
+}
+
+aside > div {
+    line-height: 3rem;
+    margin-left: 2rem;
+    padding: 0 1rem;
+}
+
+aside > * > * {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0.5rem;
+}
+
+aside > * > div:first-child {
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.incom-img {
+    background-image: url(icons/incom.png);
+}
+
+.out-img {
+    background-image: url(icons/outcom.png);
+}
+
+.draft-img {
+    background-image: url(icons/draft.png);
+}
+
+.spam-img {
+    background-image: url(icons/spam.png);
+}
+
+aside > div:hover {
+    background-color: rgb(244,228,228);
+    cursor: pointer;
+}
+/* =================ASIDE==================== */
+
+/* =================MAIN==================== */
+main {
+    margin-top: 1rem;
+}
+
+.grid-wrap {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    padding: 1rem;
+    border-bottom: 1px solid #8f8f8f8f;
+}
+
+.grid-wrap:hover {
+    background-color: #ececec;
+    cursor: pointer;
+}
+
+.flex-wrap {
+    display: flex;
+}
+
+.receiver {
+    position: relative;
+    min-width: 100px;
+    margin-left: 2rem;
+}
+
+.receiver::before, .marked::before {
+    content: "";
+    top: 3px;
+    left: -1.5rem;
+    position: absolute;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.receiver::before {
+    background-image: url(icons/star1.svg);
+}
+
+.marked::before {
+    background-image: url(icons/star2.svg);
+}
+
+.att-data {
+    display: flex;
+}
+
+.attachment {
+    margin: auto 1rem;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(icons/attach_26.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blank {
+    background-image: none;
+}
+
+.message {
+    display: flex;
+    flex-grow: 1;
+}
+
+.message-theme {
+    flex-shrink: 0;
+}
+
+.message-text {
+    width: 10vw;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #8f8f8f8f;
+}
+
+.message-text:not(:empty)::before {
+    content: ' - ';
+}
+/* =================MAIN==================== */
+
+@media  (max-width: 800px) {
+    .grid-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .flex-wrap, .message {
+        flex-direction: column;
+    }
+
+    .receiver, .message {
+        margin-left: 0.5rem;
+    }
+
+    .message-text {
+        width: 55vw;
+    }
+
+    .att-data {
+        position: absolute;
+        width: 100px;
+        justify-content: space-between;
+        right: 1rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .grid {
+        grid-template-columns: 110px 1fr;
+    }
+
+    aside > div > div:nth-child(2) {
+        display: none;
+    }
+
+    .message-text {
+        width: 60vw;
+    }
+}

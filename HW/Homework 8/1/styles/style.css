@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.wrap {
+  display: flex;
+  position: relative;
+  margin: 5rem auto;
+  width: 600px;
+  height: 300px;
+  border-radius: 15px;
+  background-color: #9fcdcd;
+  background-image: url(../images/moon_flag.png);
+  background-repeat: no-repeat;
+  background-size: 20rem;
+  background-position: 23.5rem 3rem;
+}
+
+header {
+  position: absolute;
+  top: 1rem;
+  left: -2rem;
+  width: 80%;
+  background-color: #db6423;
+  padding: 0.5rem 3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 4rem 1rem;
+}
+
+.title {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: #506d71;
+}
+
+input {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #64898f;
+  background-color: #a9d2d2;
+  outline: none;
+}
+input ::-moz-placeholder {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+input :-ms-input-placeholder {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+input ::placeholder {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.flex-columns {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.flex-columns input {
+  max-width: 100px;
+}/*# sourceMappingURL=style.css.map */

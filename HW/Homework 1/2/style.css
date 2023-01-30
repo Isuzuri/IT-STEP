@@ -1,0 +1,39 @@
+div {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+blockquote {
+    text-align: right;
+    font-size: 21px;
+}
+
+#lat-text {
+    font-style: italic;
+}
+
+#eng-text {
+    font-size: 16px;
+}
+
+p::first-letter {
+    font-weight: bold;
+    font-size: 120%;
+}
+
+h1 {
+    font-size: 44px;
+}
+
+p {
+    text-align: justify;
+    font-size: 22px;
+    background: linear-gradient(179deg, #000000 , #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+

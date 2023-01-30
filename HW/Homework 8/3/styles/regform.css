@@ -1,0 +1,88 @@
+.flex-wrap > * {
+  width: 50%;
+}
+.flex-wrap h1 {
+  margin: 0;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+}
+.flex-wrap input, .flex-wrap select {
+  padding: 0.2rem 1rem;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  font-size: 1rem;
+}
+.flex-wrap input::-moz-placeholder, .flex-wrap select::-moz-placeholder {
+  font-size: 1rem;
+}
+.flex-wrap input:-ms-input-placeholder, .flex-wrap select:-ms-input-placeholder {
+  font-size: 1rem;
+}
+.flex-wrap input::placeholder, .flex-wrap select::placeholder {
+  font-size: 1rem;
+}
+.flex-wrap .reg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.flex-wrap .reg-field .user-icon, .flex-wrap .reg-field .email-icon, .flex-wrap .reg-field .pass {
+  position: relative;
+  margin-left: 2rem;
+}
+.flex-wrap .reg-field input {
+  width: 100%;
+}
+.flex-wrap .reg-field > *::before {
+  content: "";
+  position: absolute;
+  top: -0.2rem;
+  left: -2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.flex-wrap .reg-field .user-icon::before {
+  background-image: url(../icons/username.png);
+}
+.flex-wrap .reg-field .email-icon::before {
+  background-image: url(../icons/email.png);
+}
+.flex-wrap .reg-field .pass::before {
+  background-image: url(../icons/pswd.png);
+}
+.flex-wrap .reg-field .pass {
+  display: flex;
+  gap: 1rem;
+}
+.flex-wrap .details-field {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.flex-wrap .details-field > * {
+  width: calc(50% - 1.25rem);
+}
+
+@media (max-width: 900px) {
+  .flex-wrap {
+    flex-direction: column;
+  }
+  .flex-wrap > * {
+    width: 100%;
+  }
+  .flex-wrap .details {
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .flex-wrap .pass {
+    flex-direction: column;
+  }
+  .flex-wrap .details-field > * {
+    width: 100%;
+  }
+}/*# sourceMappingURL=regform.css.map */

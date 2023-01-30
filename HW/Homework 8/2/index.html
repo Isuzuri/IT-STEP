@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/markup/style.css">
+    <link rel="stylesheet" href="styles/library/input-library.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex-wrap">
+        <div class="inputs">
+            <h1>Inputs</h1>
+            <div class="flex">
+                <input type="text" placeholder="Enter some text">
+                <input type="text" placeholder="Valid text">
+                <input type="text" placeholder="Invalid text">
+            </div>
+        </div>
+        <div class="check-boxes">
+            <h1>Check boxes (clickable)</h1>
+            <div class="flex">
+                <form action="">
+                    <input type="checkbox" name="" id="on" checked>
+                    <label for="on" class="out"></label>
+                    <label for="on" class="in"></label>
+                </form> 
+                <form action="">
+                    <input type="checkbox" name="" id="off">
+                    <label for="off" class="out"></label>
+                    <label for="off" class="in"></label>
+                </form>
+            </div>
+        </div>
+        <div class="radio">
+            <h1>Radio buttons (clickable)</h1>
+            <div class="flex">
+                <form action=""></form>
+                <p>Gender:</p>
+                    <div>
+                        <input type="radio" name="genderchoose" id="male" checked>
+                        <label for="male"><div class="hollow"></div></label>
+                    </div>
+                <label for="male">Male</label>
+                    <div>
+                        <input type="radio" name="genderchoose" id="female">
+                        <label for="female"><div class="hollow"></div></label>
+                    </div>
+                <label for="female">Female</label>
+            </form>
+            </div>
+        </div>
+        <div class="buttons">
+            <h1>Buttons</h1>
+            <div class="flex">
+                <button class="active">Active</button>
+                <button class="act-hover">Hover</button>
+                <button class="danger">Danger</button>
+                <button class="dang-hover">Hover</button>
+                <button disabled="disabled" class="disabled">Disabled</button>
+                <button class="plus">+</button>
+                <button class="minus">-</button>
+            </div>
+        </div>
+        <div class="text-area">
+            <h1>Text area</h1>
+            <div class="flex">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Enter some text ..."></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
