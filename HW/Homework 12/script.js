@@ -53,3 +53,35 @@ function perfectNumberInRange(from, to) {
     }
     return arr;
 }
+
+function showTime(hour = '00', min = '00', sec = '00') {
+    return `${hour}:${min}:${sec}`;
+}
+
+function returnSec(hour = 0, min = 0, sec = 0) {
+    if (hour !== 0) sec += hour * 3600;
+    if (min !== 0) sec += min * 60;
+    return sec;
+}
+
+function returnTime(sec) {
+    hour = 0;
+    min = 0;
+
+    while (sec >= 60) {
+        if (sec >= 60)  min += 1;
+        if (min === 60) {
+            hour += 1;
+            min = 0;
+        }
+        sec -= 60;
+    }
+    return `${hour}:${min}:${sec}`;
+}
+
+function timeCompare (hour1 = 0, min1 = 0, sec1 = 0, hour2 = 0, min2 = 0, sec2 = 0) {
+    let inSec1 = returnSec(hour1, min1, sec1);
+    let inSec2 = returnSec(hour2, min2, sec2);
+    let difference = Math.max(inSec1, inSec2) - Math.min(inSec1, inSec2);
+    return returnTime(difference)
+}
