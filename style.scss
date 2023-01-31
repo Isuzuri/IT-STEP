@@ -14,7 +14,7 @@ main {
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 90%;
+    width: 80%;
 
     > section {
         display: flex;
@@ -52,6 +52,19 @@ main {
     }
 
     > section {
+
+        margin: 1.5rem 1rem;
+        > div:first-child {
+            position: absolute;
+            left: 1rem;
+            height: 7rem;
+            padding: 1rem;
+
+            > img {
+                height: 100%;
+                
+            }
+        }
 
         > div {
             display: flex;
