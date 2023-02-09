@@ -24,12 +24,19 @@ function isSimpleNumber(num, divider = num - 1) {
 }
 
 
-function multi(num, i = 2) {
-    
+function simpleMulti(n, i = 2) {
+    if (i > n / 2) {
+        console.log(n);
+        return;
+    }
+    if (n % i === 0) {
+        console.log(i);
+        return task4 (n / i, i);
+    } else return task4(n, ++i)
 }
 
 function fibonacchi(num) {
-    if (num === 1) return 0;
-    if (num === 2) return 1;
+    if (num === 0) return 1;
+    if (num === 1) return 1;
     return fibonacchi(num - 1) + fibonacchi(num - 2);
 }
