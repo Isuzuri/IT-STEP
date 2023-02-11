@@ -36,7 +36,6 @@ function simpleMulti(n, i = 2) {
 }
 
 function fibonacchi(num) {
-    if (num === 0) return 1;
-    if (num === 1) return 1;
+    if (num === 0 || num === 1) return num;
     return fibonacchi(num - 1) + fibonacchi(num - 2);
 }
