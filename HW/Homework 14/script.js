@@ -31,6 +31,7 @@ function path(distance) {
 }
 
 // =================    TASK 2    =============
+// Простые множители
 function primeFactors (num) {
     const primeArray = [];
     let divider = 2;
@@ -67,73 +68,107 @@ function findGCD (firstArray, secondArray) {
     factors = factors.flat();
     return factors.reduce((a, b) => a * b)
 }
-
+// Приведение
+function bringing() {
+    let SCM = findSCM(firstFraction.primeDenom, secondFraction.primeDenom);
+    let addFirst = SCM / firstFraction.denominator;
+    let addSecond = SCM / secondFraction.denominator;
+    newFirstNumer = firstFraction.numerator * addFirst;
+    newFirstDenom = firstFraction.denominator * addFirst;
+    newSecondNumer = secondFraction.numerator * addSecond;
+    newSecondDenom = secondFraction.denominator * addSecond;
+    return SCM;
+}
+// Сокращение
+function reduce(num, denom) {
+    let GCD = findGCD(primeFactors(num), primeFactors(denom));
+    convertedNumerator = num / GCD;
+    convertedDenominator = denom / GCD;
+    return reducedArr =[convertedNumerator, convertedDenominator]
+}
+// Конструктор дроби + простых множителей
 function Fraction (numer, denom) {
     this.numerator = numer,
     this.denominator = denom,
     this.primeNumer = primeFactors(this.numerator),
-    this.primeDenom = primeFactors(this.denominator),
-    this.GCD = findGCD(this.primeNumer, this.primeDenom);
+    this.primeDenom = primeFactors(this.denominator);
 }
-
+// Создание дробей
 let firstFraction = new Fraction(3, 9);
 let secondFraction = new Fraction(5, 35);
 
-function sumFraction (firstFraction, secondFraction) {
-    let SCM = findSCM(firstFraction.primeDenom, secondFraction.primeDenom);
-
-
-    let addFirst = SCM / firstFraction.denominator;
-    let addSecond = SCM / secondFraction.denominator;
-    firstFraction.numerator *= addFirst;
-    firstFraction.denominator *= addFirst;
-    secondFraction.numerator *= addSecond;
-    secondFraction.denominator *= addSecond;
-    let convertedNumerator = firstFraction.numerator + secondFraction.numerator;
+// =================    Сумма   ================
+function sumFraction () {
+    let SCM = bringing()
+    // Операция 
+    let convertedNumerator = newFirstNumer + newSecondNumer;
     let convertedDenominator = SCM;
-
-
-    let GCD = findGCD(primeFactors(convertedNumerator), primeFactors(convertedDenominator));
-
-
-    convertedNumerator /= GCD;
-    convertedDenominator /= GCD;
-    return `${convertedNumerator}/${convertedDenominator}`
+    // Сокращение и вывод
+    reduce(convertedNumerator, convertedDenominator)
+    return reducedArr[0] + '/' + reducedArr[1];
+}
+// =================    Разность    ================
+function subFraction () {
+    let SCM = bringing()
+    // Операция 
+    let convertedNumerator = newFirstNumer - newSecondNumer;
+    let convertedDenominator = SCM;
+    // Сокращение и вывод
+    reduce(convertedNumerator, convertedDenominator)
+    return reducedArr[0] + '/' + reducedArr[1];
+}
+// =================    Умножение    ================
+function multiplicationFraction () {
+    let convertedNumerator = firstFraction.numerator * secondFraction.numerator;
+    let convertedDenominator = firstFraction.denominator * secondFraction.denominator;   
+    // Сокращение и вывод
+    reduce(convertedNumerator, convertedDenominator)
+    return reducedArr[0] + '/' + reducedArr[1];
+}
+// =================    Деление    ================
+function divideFraction () {
+    let convertedNumerator = firstFraction.numerator * secondFraction.denominator;
+    let convertedDenominator = firstFraction.denominator * secondFraction.numerator;   
+    // Сокращение и вывод
+    reduce(convertedNumerator, convertedDenominator)
+    return reducedArr[0] + '/' + reducedArr[1];
 }
 
-// function reduce(convertedNumerator, convertedDenominator) {
-//     let GCD = findGCD(convertedNumerator, convertedDenominator);
-//     convertedNumerator /= (convertedNumerator / GCD);
-//     convertedDenominator /= (convertedDenominator / GCD);
-//     return `${convertedNumerator}/${convertedDenominator}`
-// }
+// =================    TASK 3    =============
 
+let time = {
+    hour: 21,
+    minute: 40,
+    second: 96,
+}
 
+function makeCorrect() {
+    time.second < 0 ? time.minute -= Math.ceil(time.second / -60) : time.minute += parseInt(time.second / +60)
+    time.minute < 0 ? time.hour -= Math.ceil(time.minute / -60) : time.hour += parseInt(time.minute / 60)
+    time.second < 0 ? time.second = 60 - (-time.second % -60) : time.second %= 60;
+    time.minute < 0 ? time.minute = 60 - (-time.minute % -60) : time.minute %= 60;
+    time.hour < 0 ? time.hour = 24 - (-time.hour % -24) : time.hour %= 24;
+}
 
+function showTime() {
+    const box = document.querySelector('h1');
+    box.style.fontSize = '6rem';
+    makeCorrect()
+    hour = String(time.hour / 100)
+    minute = String(time.minute / 100);
+    second = String(time.second / 100);
+    box.innerText = `${hour.slice(-2)}:${minute.slice(-2)}:${second.slice(-2)}`
+}
 
-// const calcFraction = {
-//     sumFraction: function () {return this.numerator + this.denominator},
-//     subFraction: function () {return this.numerator - this.denominator},
-//     multFraction: function () {return this.numerator * this.denominator},
-//     divideFraction: function () {return this.numerator / this.denominator},
-//     cut: function () {
-//         const numDividers = dividers(this.numerator, this.numArray).sort(sortArr);
-//         const denomDividers = dividers(this.denominator, this.denomArray).sort(sortArr);
-//         const longestArr = Math.max(numDividers.length, denomDividers.length);
-//         for (i = 0; i < longestArr; i++) {
-//             if (denomDividers.includes(numDividers[i])) {
-//                 this.numerator /= numDividers[i];
-//                 this.denominator /= numDividers[i]; 
-//                 if (Number.isInteger(this.numerator) || Number.isInteger(this.denominator)) {
-        
-//                 } else {
-//                     this.numerator *= numDividers[i];
-//                     this.denominator *= numDividers[i];
-//                     break 
-//                 }
-//             }  
-//         }
-//         return `Cutted Fraction: ${this.numerator}/${this.denominator}`
-//     }
-// }
-
+function changeSec(amount) {
+    time.second += amount;
+    showTime()
+}
+function changeMin(amount) {
+    time.minute += amount;
+    showTime()
+}
+function changeHour(amount) {
+    time.hour += amount;
+    showTime()
+}
