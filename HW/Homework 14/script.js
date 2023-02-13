@@ -154,10 +154,10 @@ function showTime() {
     const box = document.querySelector('h1');
     box.style.fontSize = '6rem';
     makeCorrect()
-    hour = String(time.hour / 100)
-    minute = String(time.minute / 100);
-    second = String(time.second / 100);
-    box.innerText = `${hour.slice(-2)}:${minute.slice(-2)}:${second.slice(-2)}`
+    let rightHour = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.hour)
+    let rightMinute = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.minute)
+    let rightSecond = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.second)
+    box.innerText = `${rightHour}:${rightMinute}:${rightSecond}`;
 }
 
 function changeSec(amount) {
