@@ -23,7 +23,6 @@ function isSimpleNumber(num, divider = num - 1) {
     return  isSimpleNumber(num, divider - 1)
 }
 
-
 function simpleMulti(n, i = 2) {
     if (i > n / 2) {
         console.log(n);
@@ -31,8 +30,8 @@ function simpleMulti(n, i = 2) {
     }
     if (n % i === 0) {
         console.log(i);
-        return task4 (n / i, i);
-    } else return task4(n, ++i)
+        return simpleMulti (n / i, i);
+    } else return simpleMulti(n, ++i)
 }
 
 function fibonacchi(num) {
