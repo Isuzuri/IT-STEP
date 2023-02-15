@@ -1,18 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url(../../forAll/nullstyle.css);
+@import url("https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+html ::-webkit-scrollbar {
+  width: 0;
+}
 
 body {
-    font-family: 'K2D', sans-serif;
-    background-color: #2D3436;
+  font-family: "K2D", sans-serif;
+  background-color: #2D3436;
+  color: white;
 }
 
-h1 {
-    text-align: center;
-    font-size: 15rem;
-    color: white;
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
+}
+header > div {
+  width: 33%;
+  padding: 1rem 0;
+  border: 1px solid white;
+  font-size: 3rem;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+header > div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-div {
-    text-align: center;
-    color: white;
-    font-size: 1.5rem;
+.view_panel .commands > div {
+  display: none;
+  justify-content: center;
+  align-items: stretch;
 }
+.view_panel .commands > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid white;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.view_panel .commands > div > div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.view_panel .commands > div > div .desc {
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  border-bottom: 1px solid white;
+}
+.view_panel .commands > div > div div {
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.view_panel .commands > div > div div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.view_panel .commands > div.flex {
+  display: flex;
+}
+.view_panel .commands .show_time {
+  font-size: 1.5rem;
+}
+.view_panel .commands .task1_commands > div {
+  width: 49.5%;
+}
+.view_panel .commands .task1_commands > div.show_info {
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  border-bottom: 1px solid white;
+}
+.view_panel .commands .task2_commands > div {
+  width: 19.8%;
+}
+.view_panel .commands .task2_commands > div.show_fraction {
+  flex-direction: row;
+  justify-content: space-around;
+}
+.view_panel .commands .task2_commands > div.show_fraction .numer {
+  border-bottom: 1px solid white;
+  padding: 0 0.5rem;
+}
+.view_panel .commands .task3_commands > div {
+  width: 24.75%;
+}
+.view_panel .output {
+  display: flex;
+  justify-content: center;
+  font-size: 6rem;
+}
+
+input {
+  font-family: inherit;
+  margin: 0.5rem;
+  border-radius: 5px;
+}
+
+.task2_commands input {
+  width: 1.5rem;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

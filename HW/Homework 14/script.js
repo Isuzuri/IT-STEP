@@ -66,11 +66,12 @@ function findGCD (firstArray, secondArray) {
         }
     }
     factors = factors.flat();
+    if (factors.length < 1) return 1;
     return factors.reduce((a, b) => a * b)
 }
 // Приведение
 function bringing() {
-    let SCM = findSCM(firstFraction.primeDenom, secondFraction.primeDenom);
+    let SCM = findSCM(primeFactors(firstFraction.denominator), primeFactors(secondFraction.denominator));
     let addFirst = SCM / firstFraction.denominator;
     let addSecond = SCM / secondFraction.denominator;
     newFirstNumer = firstFraction.numerator * addFirst;
@@ -89,13 +90,11 @@ function reduce(num, denom) {
 // Конструктор дроби + простых множителей
 function Fraction (numer, denom) {
     this.numerator = numer,
-    this.denominator = denom,
-    this.primeNumer = primeFactors(this.numerator),
-    this.primeDenom = primeFactors(this.denominator);
+    this.denominator = denom;
 }
 // Создание дробей
-let firstFraction = new Fraction(3, 9);
-let secondFraction = new Fraction(5, 35);
+let firstFraction = new Fraction
+let secondFraction = new Fraction
 
 // =================    Сумма   ================
 function sumFraction () {
@@ -151,13 +150,12 @@ function makeCorrect() {
 }
 
 function showTime() {
-    const box = document.querySelector('h1');
-    box.style.fontSize = '6rem';
+    const box = document.querySelector('.output');
     makeCorrect()
-    hour = String(time.hour / 100)
-    minute = String(time.minute / 100);
-    second = String(time.second / 100);
-    box.innerText = `${hour.slice(-2)}:${minute.slice(-2)}:${second.slice(-2)}`
+    let rightHour = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.hour)
+    let rightMinute = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.minute)
+    let rightSecond = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.second)
+    box.innerText = `${rightHour}:${rightMinute}:${rightSecond}`;
 }
 
 function changeSec(amount) {
