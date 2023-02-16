@@ -21,7 +21,6 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 1rem;
 
     > div {
         width: 33%;
@@ -110,6 +109,19 @@ header {
 
         .task3_commands > div {
             width: 24.75%; 
+
+            > div {
+                display: flex;
+                justify-content: space-evenly;
+
+                > div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 33%;
+                    height: 100%;
+                }
+            }
         }
     }
 
@@ -133,3 +145,59 @@ input {
     text-align: center;
 }
 
+.fraction {
+    display: none;
+    gap: 1rem;
+    text-align: center;
+    align-items: center;
+
+    &.flex {
+        display: flex;
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        
+
+        div:first-child {
+            border-bottom: 1px solid white;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+.task3_commands input {
+    width: 4rem;
+    margin: 0.8rem 0;
+    text-align: center;
+}
+
+.hw_condition {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 1rem 0.5rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+embed {
+    position: absolute;
+    display: none;
+    top: 0;
+    width: 45vw;
+    height: 90vh;
+    margin: 0;
+    z-index: 1000;
+}
+
+.hide_embed {
+    display: block;
+}

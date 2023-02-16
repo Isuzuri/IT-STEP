@@ -16,7 +16,7 @@ const auto = {
     manufacturer: 'Porshe',
     model: 'Taycan',
     year: 2021,
-    speed: 100,
+    speed: 143,
 }
 
 function showInfo () {
@@ -87,6 +87,12 @@ function reduce(num, denom) {
     convertedDenominator = denom / GCD;
     return reducedArr =[convertedNumerator, convertedDenominator]
 }
+//Выделение целой части
+function fullPart() {
+    intNum = parseInt(reducedArr[0] / reducedArr[1]);
+    newNum = reducedArr[0] % reducedArr[1];
+    return [intNum, newNum]
+}
 // Конструктор дроби + простых множителей
 function Fraction (numer, denom) {
     this.numerator = numer,
@@ -104,7 +110,7 @@ function sumFraction () {
     let convertedDenominator = SCM;
     // Сокращение и вывод
     reduce(convertedNumerator, convertedDenominator)
-    return reducedArr[0] + '/' + reducedArr[1];
+    return reducedArr;
 }
 // =================    Разность    ================
 function subFraction () {
@@ -114,7 +120,7 @@ function subFraction () {
     let convertedDenominator = SCM;
     // Сокращение и вывод
     reduce(convertedNumerator, convertedDenominator)
-    return reducedArr[0] + '/' + reducedArr[1];
+    return reducedArr;
 }
 // =================    Умножение    ================
 function multiplicationFraction () {
@@ -122,7 +128,7 @@ function multiplicationFraction () {
     let convertedDenominator = firstFraction.denominator * secondFraction.denominator;   
     // Сокращение и вывод
     reduce(convertedNumerator, convertedDenominator)
-    return reducedArr[0] + '/' + reducedArr[1];
+    return reducedArr;
 }
 // =================    Деление    ================
 function divideFraction () {
@@ -130,7 +136,7 @@ function divideFraction () {
     let convertedDenominator = firstFraction.denominator * secondFraction.numerator;   
     // Сокращение и вывод
     reduce(convertedNumerator, convertedDenominator)
-    return reducedArr[0] + '/' + reducedArr[1];
+    return reducedArr;
 }
 
 // =================    TASK 3    =============

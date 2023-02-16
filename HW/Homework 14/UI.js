@@ -8,6 +8,7 @@ document.querySelector('.button_task1').addEventListener('click', () => {
 const commandsTask2 = document.querySelector('.task2_commands');
 document.querySelector('.button_task2').addEventListener('click', () => {
     commandsTask2.classList.toggle('flex');
+    document.querySelector('.fraction').classList.toggle('flex');
 })
 
 const commandsTask3 = document.querySelector('.task3_commands');
@@ -23,27 +24,60 @@ function getValue() {
     firstFraction = new Fraction(+document.querySelector('.first_fraction .numer input').value, +document.querySelector('.first_fraction .denom input').value)
     secondFraction = new Fraction(+document.querySelector('.second_fraction .numer input').value, +document.querySelector('.second_fraction .denom input').value)
 }
+
+let numer = document.querySelector('.simple .numer');
+let denom = document.querySelector('.simple .denom');
+
+let fullNum = document.querySelector('.full');
+let bringetNumer = document.querySelector('.bringet .numer');
+let bringetDenom = document.querySelector('.bringet .denom');
+
+function bringetFraction() {
+    let full = fullPart(+numer.value, +denom.value);
+    fullNum.innerText = full[0];
+    bringetNumer.innerText = full[1]
+    bringetDenom.innerText = denom.innerText;
+    if (fullNum.innerText === '0') {
+        fullNum.style.display = 'none';
+    } else fullNum.style.display = 'flex';
+
+    if (bringetNumer.innerText === '0') {
+        document.querySelector('.bringet').style.display = 'none';
+    } else document.querySelector('.bringet').style.display = 'flex';
+}
+
 document.querySelector('.sum').addEventListener('click', () => {
     getValue()
-    output.innerText = sumFraction()
+    numer.innerText = sumFraction()[0]
+    denom.innerText = sumFraction()[1]
+    bringetFraction()
 })
 document.querySelector('.sub').addEventListener('click', () => {
     getValue()
-    output.innerText = subFraction()
+    numer.innerText = subFraction()[0]
+    denom.innerText = subFraction()[1]
+    bringetFraction()
 })
 document.querySelector('.mult').addEventListener('click', () => {
     getValue()
-    output.innerText = multiplicationFraction()
+    numer.innerText = multiplicationFraction()[0]
+    denom.innerText = multiplicationFraction()[1]
+    bringetFraction()
 })
 document.querySelector('.divide').addEventListener('click', () => {
     getValue()
-    output.innerText = divideFraction()
+    numer.innerText = divideFraction()[0]
+    denom.innerText = divideFraction()[1]
+    bringetFraction()
 })
 // ============================ TASK 3 CONTROL ========================
 document.querySelector('.show_time').addEventListener('click', showTime);
-document.querySelector('.add_sec .plus').addEventListener('click', () => changeSec(17));
-document.querySelector('.add_sec .minus').addEventListener('click', () => changeSec(-14));
-document.querySelector('.add_min .plus').addEventListener('click', () => changeMin(17));
-document.querySelector('.add_min .minus').addEventListener('click', () => changeMin(-14));
-document.querySelector('.add_hour .plus').addEventListener('click', () => changeHour(1));
-document.querySelector('.add_hour .minus').addEventListener('click', () => changeHour(-1));
+
+document.querySelector('.change_sec .plus').addEventListener('click', () => changeSec(+document.querySelector('.change_sec input').value))
+document.querySelector('.change_sec .minus').addEventListener('click', () => changeSec(-(+document.querySelector('.change_sec input').value)))
+
+document.querySelector('.change_min .plus').addEventListener('click', () => changeMin(+document.querySelector('.change_min input').value))
+document.querySelector('.change_min .minus').addEventListener('click', () => changeMin(-(+document.querySelector('.change_min input').value)))
+
+document.querySelector('.change_hour .plus').addEventListener('click', () => changeHour(+document.querySelector('.change_hour input').value))
+document.querySelector('.change_hour .minus').addEventListener('click', () => changeHour(-(+document.querySelector('.change_hour input').value)))
