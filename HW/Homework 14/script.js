@@ -81,7 +81,7 @@ function bringing() {
     return SCM;
 }
 // Сокращение
-function reduce(num, denom) {
+function cut(num, denom) {
     let GCD = findGCD(primeFactors(num), primeFactors(denom));
     convertedNumerator = num / GCD;
     convertedDenominator = denom / GCD;
@@ -109,7 +109,7 @@ function sumFraction () {
     let convertedNumerator = newFirstNumer + newSecondNumer;
     let convertedDenominator = SCM;
     // Сокращение и вывод
-    reduce(convertedNumerator, convertedDenominator)
+    cut(convertedNumerator, convertedDenominator)
     return reducedArr;
 }
 // =================    Разность    ================
@@ -119,7 +119,7 @@ function subFraction () {
     let convertedNumerator = newFirstNumer - newSecondNumer;
     let convertedDenominator = SCM;
     // Сокращение и вывод
-    reduce(convertedNumerator, convertedDenominator)
+    cut(convertedNumerator, convertedDenominator)
     return reducedArr;
 }
 // =================    Умножение    ================
@@ -127,7 +127,7 @@ function multiplicationFraction () {
     let convertedNumerator = firstFraction.numerator * secondFraction.numerator;
     let convertedDenominator = firstFraction.denominator * secondFraction.denominator;   
     // Сокращение и вывод
-    reduce(convertedNumerator, convertedDenominator)
+    cut(convertedNumerator, convertedDenominator)
     return reducedArr;
 }
 // =================    Деление    ================
@@ -135,7 +135,7 @@ function divideFraction () {
     let convertedNumerator = firstFraction.numerator * secondFraction.denominator;
     let convertedDenominator = firstFraction.denominator * secondFraction.numerator;   
     // Сокращение и вывод
-    reduce(convertedNumerator, convertedDenominator)
+    cut(convertedNumerator, convertedDenominator)
     return reducedArr;
 }
 
@@ -145,34 +145,36 @@ let time = {
     hour: 21,
     minute: 40,
     second: 96,
-}
 
-function makeCorrect() {
-    time.second < 0 ? time.minute -= Math.ceil(time.second / -60) : time.minute += parseInt(time.second / +60)
-    time.minute < 0 ? time.hour -= Math.ceil(time.minute / -60) : time.hour += parseInt(time.minute / 60)
-    time.second < 0 ? time.second = 60 - (-time.second % -60) : time.second %= 60;
-    time.minute < 0 ? time.minute = 60 - (-time.minute % -60) : time.minute %= 60;
-    time.hour < 0 ? time.hour = 24 - (-time.hour % -24) : time.hour %= 24;
-}
+    makeCorrect() {
+        this.second < 0 ? this.minute -= Math.ceil(this.second / -60) : this.minute += parseInt(this.second / +60)
+        this.minute < 0 ? this.hour -= Math.ceil(this.minute / -60) : this.hour += parseInt(this.minute / 60)
+        this.second < 0 ? this.second = 60 - (-this.second % -60) : this.second %= 60;
+        this.minute < 0 ? this.minute = 60 - (-this.minute % -60) : this.minute %= 60;
+        this.hour < 0 ? this.hour = 24 - (-this.hour % -24) : this.hour %= 24;
+    },
+    
+    showTime() {
+        const box = document.querySelector('.output');
+        time.makeCorrect()
+        let rightHour = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.hour)
+        let rightMinute = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.minute)
+        let rightSecond = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.second)
+        box.innerText = `${rightHour}:${rightMinute}:${rightSecond}`;
+    },
+    
+    changeSec(amount) {
+        this.second += amount;
+        this.showTime()
+    },
+    
+    changeMin(amount) {
+        this.minute += amount;
+        this.showTime()
+    },
 
-function showTime() {
-    const box = document.querySelector('.output');
-    makeCorrect()
-    let rightHour = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.hour)
-    let rightMinute = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.minute)
-    let rightSecond = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.second)
-    box.innerText = `${rightHour}:${rightMinute}:${rightSecond}`;
-}
-
-function changeSec(amount) {
-    time.second += amount;
-    showTime()
-}
-function changeMin(amount) {
-    time.minute += amount;
-    showTime()
-}
-function changeHour(amount) {
-    time.hour += amount;
-    showTime()
+    changeHour(amount) {
+        this.hour += amount;
+        this.showTime()
+    },
 }

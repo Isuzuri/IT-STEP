@@ -17,8 +17,9 @@ document.querySelector('.button_task3').addEventListener('click', () => {
 })
 
 // ============================ TASK 1 CONTROL ========================
-document.querySelector('.show_info').innerText = auto.manufacturer + ' | ' + auto.model + ' | ' + auto.year + ' | ' + auto.speed +'km/h';
-document.querySelector('.distance').oninput = () => path(document.querySelector('.distance input').value);
+document.querySelector('.show_info').innerText = `${auto.manufacturer} | ${auto.model} | ${auto.year} | ${auto.speed}`;
+document.querySelector('.distance').addEventListener('input', () => {output.innerText = path(document.querySelector('.distance input').value)})
+
 // ============================ TASK 2 CONTROL ========================
 function getValue() {
     firstFraction = new Fraction(+document.querySelector('.first_fraction .numer input').value, +document.querySelector('.first_fraction .denom input').value)
@@ -71,13 +72,13 @@ document.querySelector('.divide').addEventListener('click', () => {
     bringetFraction()
 })
 // ============================ TASK 3 CONTROL ========================
-document.querySelector('.show_time').addEventListener('click', showTime);
+document.querySelector('.show_time').addEventListener('click', time.showTime);
 
-document.querySelector('.change_sec .plus').addEventListener('click', () => changeSec(+document.querySelector('.change_sec input').value))
-document.querySelector('.change_sec .minus').addEventListener('click', () => changeSec(-(+document.querySelector('.change_sec input').value)))
+document.querySelector('.change_sec .plus').addEventListener('click', () => time.changeSec(+document.querySelector('.change_sec input').value))
+document.querySelector('.change_sec .minus').addEventListener('click', () => time.changeSec(-(+document.querySelector('.change_sec input').value)))
 
-document.querySelector('.change_min .plus').addEventListener('click', () => changeMin(+document.querySelector('.change_min input').value))
-document.querySelector('.change_min .minus').addEventListener('click', () => changeMin(-(+document.querySelector('.change_min input').value)))
+document.querySelector('.change_min .plus').addEventListener('click', () => time.changeMin(+document.querySelector('.change_min input').value))
+document.querySelector('.change_min .minus').addEventListener('click', () => time.changeMin(-(+document.querySelector('.change_min input').value)))
 
-document.querySelector('.change_hour .plus').addEventListener('click', () => changeHour(+document.querySelector('.change_hour input').value))
-document.querySelector('.change_hour .minus').addEventListener('click', () => changeHour(-(+document.querySelector('.change_hour input').value)))
+document.querySelector('.change_hour .plus').addEventListener('click', () => time.changeHour(+document.querySelector('.change_hour input').value))
+document.querySelector('.change_hour .minus').addEventListener('click', () => time.changeHour(-(+document.querySelector('.change_hour input').value)))
