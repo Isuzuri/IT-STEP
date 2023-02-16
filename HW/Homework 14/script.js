@@ -16,7 +16,7 @@ const auto = {
     manufacturer: 'Porshe',
     model: 'Taycan',
     year: 2021,
-    speed: 100,
+    speed: 143,
 }
 
 function showInfo () {
@@ -66,11 +66,12 @@ function findGCD (firstArray, secondArray) {
         }
     }
     factors = factors.flat();
+    if (factors.length < 1) return 1;
     return factors.reduce((a, b) => a * b)
 }
 // Приведение
 function bringing() {
-    let SCM = findSCM(firstFraction.primeDenom, secondFraction.primeDenom);
+    let SCM = findSCM(primeFactors(firstFraction.denominator), primeFactors(secondFraction.denominator));
     let addFirst = SCM / firstFraction.denominator;
     let addSecond = SCM / secondFraction.denominator;
     newFirstNumer = firstFraction.numerator * addFirst;
@@ -86,16 +87,20 @@ function reduce(num, denom) {
     convertedDenominator = denom / GCD;
     return reducedArr =[convertedNumerator, convertedDenominator]
 }
+//Выделение целой части
+function fullPart() {
+    intNum = parseInt(reducedArr[0] / reducedArr[1]);
+    newNum = reducedArr[0] % reducedArr[1];
+    return [intNum, newNum]
+}
 // Конструктор дроби + простых множителей
 function Fraction (numer, denom) {
     this.numerator = numer,
-    this.denominator = denom,
-    this.primeNumer = primeFactors(this.numerator),
-    this.primeDenom = primeFactors(this.denominator);
+    this.denominator = denom;
 }
 // Создание дробей
-let firstFraction = new Fraction(3, 9);
-let secondFraction = new Fraction(5, 35);
+let firstFraction = new Fraction
+let secondFraction = new Fraction
 
 // =================    Сумма   ================
 function sumFraction () {
@@ -105,7 +110,7 @@ function sumFraction () {
     let convertedDenominator = SCM;
     // Сокращение и вывод
     reduce(convertedNumerator, convertedDenominator)
-    return reducedArr[0] + '/' + reducedArr[1];
+    return reducedArr;
 }
 // =================    Разность    ================
 function subFraction () {
@@ -115,7 +120,7 @@ function subFraction () {
     let convertedDenominator = SCM;
     // Сокращение и вывод
     reduce(convertedNumerator, convertedDenominator)
-    return reducedArr[0] + '/' + reducedArr[1];
+    return reducedArr;
 }
 // =================    Умножение    ================
 function multiplicationFraction () {
@@ -123,7 +128,7 @@ function multiplicationFraction () {
     let convertedDenominator = firstFraction.denominator * secondFraction.denominator;   
     // Сокращение и вывод
     reduce(convertedNumerator, convertedDenominator)
-    return reducedArr[0] + '/' + reducedArr[1];
+    return reducedArr;
 }
 // =================    Деление    ================
 function divideFraction () {
@@ -131,7 +136,7 @@ function divideFraction () {
     let convertedDenominator = firstFraction.denominator * secondFraction.numerator;   
     // Сокращение и вывод
     reduce(convertedNumerator, convertedDenominator)
-    return reducedArr[0] + '/' + reducedArr[1];
+    return reducedArr;
 }
 
 // =================    TASK 3    =============
@@ -151,8 +156,7 @@ function makeCorrect() {
 }
 
 function showTime() {
-    const box = document.querySelector('h1');
-    box.style.fontSize = '6rem';
+    const box = document.querySelector('.output');
     makeCorrect()
     let rightHour = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.hour)
     let rightMinute = new Intl.NumberFormat('ru-RU', {minimumIntegerDigits: 2}).format(time.minute)
