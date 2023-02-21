@@ -1,6 +1,6 @@
 function Product(productName, amount, isBuyed = false) {
-    this.productName = productName,
-    this.amount = amount,
+    this.productName = productName;
+    this.amount = amount;
     this.isBuyed = isBuyed;
 }
 
@@ -39,9 +39,9 @@ function checkAsBuyed(productName) {
 let chequeBox = document.querySelector('.cheque');
 
 function Purchase(itemName, amount, price) {
-    this.itemName = itemName,
-    this.amount = amount,
-    this.price = price,
+    this.itemName = itemName;
+    this.amount = amount;
+    this.price = price;
 
     this.toString = function() {
         return `${this.itemName}  ${this.amount}  ${this.price}rub`;
@@ -57,9 +57,8 @@ let cheque = [
 ]
 
 function showCheque() {
-    chequeBox.innerText = 'Item  Amount  Price \n'
     for (let value of cheque) {
-        chequeBox.innerText += `${value} \n`
+        document.write(`${value} <br>`)
     }
 }
 
@@ -82,4 +81,84 @@ function averagePrice() {
         sumOfPrice += value.price;
     }
     return (sumOfPrice / cheque.length).toFixed(2);
+}
+
+function CssStyle(property, value) {
+    this.property = property;
+    this.value = value;
+}
+
+let styleArray = [
+    new CssStyle('font-size', '3rem'),
+    new CssStyle('text-transform', 'uppercase'),
+    new CssStyle('color', 'red'),
+    new CssStyle('text-decoration', 'underline'),
+    new CssStyle('text-align', 'center')
+]
+
+function styledText(text) {
+    let style = '';
+    for (let value of styleArray) {
+        style += `${value.property}:${value.value}; `;
+    }
+    document.write(`<p style="${style}">${text}</p>`)
+}
+
+function LectureHall(name, numberOfSeats, faculty) {
+    this.name = name;
+    this.numberOfSeats = numberOfSeats;
+    this.faculty = faculty;
+
+    this.toString = function() {
+        return (`${this.name}, ${this.numberOfSeats} seats. Faculty: ${this.faculty}`)
+    }
+}
+
+function Group(name, numberOfStudents, faculty) {
+    this.name = name;
+    this.numberOfStudents = numberOfStudents;
+    this.faculty = faculty
+}
+
+let academy = [
+    new LectureHall('Electronic security systems', 16, 'Computer Engineering'),
+    new LectureHall('Cardiolgy', 12, 'Clinical medicine'),
+    new LectureHall('Infocommunication technologies', 15, 'Information security'),
+    new LectureHall('Programmable mobile systems', 17, 'Computer Engineering'),
+    new LectureHall('Radio informatics', 12, 'Radio engineering and electronics'),
+]
+
+let studyGroup = [
+    new Group('1st year', 12, 'Computer Engineering'),
+    new Group('3rd year medicine', 3, 'Clinical medicine'),
+]
+
+function showAllLecture() {
+    for (let value of Academy) {
+        document.write(`${value} <br>`)
+    }
+}
+
+function facultyLectureHalls(faculty) {
+    document.write(`Lectures for ${faculty} faculty <br>`)
+    for (let value of academy) {
+        if (faculty === value.faculty) document.write(`${value} <br>`);
+    }
+}
+
+function lectureHallForGroup(group) {
+    let facultyOfGroup = '';
+    for (let value of studyGroup) {
+        if (value.name === group) facultyOfGroup = value.faculty;
+    }
+    document.write(`Lectures for ${group} group <br>`);
+    facultyLectureHalls(facultyOfGroup)
+}
+
+function sortByNumberOfSeats() {
+    return academy.sort((a, b) => a.numberOfSeats > b.numberOfSeats ? -1 : 1)
+}
+
+function sortLectureHallByABC() {
+    return academy.sort((a, b) => a.name > b.name ? 1 : -1)
 }
